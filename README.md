@@ -1,7 +1,3 @@
-# DEUS
-
-Credit where credit's due. This app is based on https://github.com/DP-3T/dp3t-app-ios, we are adapting it to the Dutch market. Check out https://deus.ai/ for more about DEUS.
-
 # DP3T iOS Demo App
 
 [![Swift Package Manager compatible](https://img.shields.io/badge/SPM-%E2%9C%93-brightgreen.svg?style=flat)](https://github.com/apple/swift-package-manager)

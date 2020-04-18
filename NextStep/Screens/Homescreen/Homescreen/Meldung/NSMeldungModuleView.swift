@@ -9,22 +9,22 @@ import UIKit
 class NSMeldungView: NSModuleBaseView {
     var uiState: NSUIStateModel.Homescreen.Meldungen
         = .init(meldung: .noMeldung, pushProblem: false) {
-        didSet { updateLayout() }
-    }
+            didSet { updateLayout() }
+        }
 
     // section views
-    private let noMeldungenView = NSBluetoothSettingsDetailView(title: "meldungen_no_meldungen_title".ub_localized, subText: "meldungen_no_meldungen_text".ub_localized, image: UIImage(named: "ic-check")!, titleColor: .ns_secondary, subtextColor: .ns_text, backgroundColor: UIColor(ub_hexString: "#d3f2ee")!)
+    private let noMeldungenView = NSBluetoothSettingsDetailView(title: "meldungen_no_meldungen_title".ub_localized, subText: "meldungen_no_meldungen_text".ub_localized, titleColor: .ns_secondary, subtextColor: .ns_text, backgroundColor: UIColor.white)
 
-    private let meldungenView = NSBluetoothSettingsDetailView(title: "meldungen_meldung_title".ub_localized, subText: "meldungen_meldung_text".ub_localized, image: UIImage(named: "ic-info")!, titleColor: .white, subtextColor: .white, backgroundColor: .ns_primary, additionalText: "meldungen_meldung_more_button".ub_localized)
+    private let meldungenView = NSBluetoothSettingsDetailView(title: "meldungen_meldung_title".ub_localized, subText: "meldungen_meldung_text".ub_localized, titleColor: .white, subtextColor: .white, backgroundColor: .ns_primary, additionalText: "meldungen_meldung_more_button".ub_localized)
 
-    private let infectedView = NSBluetoothSettingsDetailView(title: "meldungen_infected_title".ub_localized, subText: "meldungen_infected_text".ub_localized, image: UIImage(named: "ic-info")!, titleColor: .white, subtextColor: .white, backgroundColor: .ns_primary, additionalText: "meldungen_meldung_more_button".ub_localized)
+    private let infectedView = NSBluetoothSettingsDetailView(title: "meldungen_infected_title".ub_localized, subText: "meldungen_infected_text".ub_localized, titleColor: .white, subtextColor: .white, backgroundColor: .ns_primary, additionalText: "meldungen_meldung_more_button".ub_localized)
 
-    private let noPushView = NSBluetoothSettingsDetailView(title: "push_deactivated_title".ub_localized, subText: "push_deactivated_text".ub_localized, image: UIImage(named: "ic-cross")!, titleColor: .ns_error, subtextColor: .ns_error)
+    private let noPushView = NSBluetoothSettingsDetailView(title: "push_deactivated_title".ub_localized, subText: "push_deactivated_text".ub_localized, titleColor: .ns_error, subtextColor: .ns_error)
 
     override init() {
         super.init()
 
-        headerIcon = UIImage(named: "ic-meldungen")!
+        headerIcon = UIImage(named: "ic-report")!
         headerTitle = "reports_title_homescreen".ub_localized
 
         updateLayout()

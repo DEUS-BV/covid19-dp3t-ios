@@ -4,7 +4,6 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-import DP3TSDK
 import Foundation
 import UserNotifications
 

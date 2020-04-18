@@ -4,7 +4,6 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-import DP3TSDK
 import Foundation
 
 /// The backend environment under which the application runs.
@@ -19,9 +18,9 @@ enum NSBackendEnvironment {
         switch self {
         case .debug: fallthrough
         case .dev:
-            baseURLString = "https://next-step.io/"
+            baseURLString = "https://covid.deus.ai"
         case .prod:
-            baseURLString = "https://next-step.io/"
+            baseURLString = "https://covid.deus.ai"
         }
 
         return URL(string: baseURLString)!.appendingPathComponent("language_key".ub_localized)
@@ -32,9 +31,9 @@ enum NSBackendEnvironment {
         switch self {
         case .debug: fallthrough
         case .dev:
-            baseURLString = "https://ws-app-dev.next-step.io"
+            baseURLString = "https://covid.deus.ai"
         case .prod:
-            baseURLString = "https://ws-app-prod.next-step.io"
+            baseURLString = "https://covid.deus.ai"
         }
 
         return URL(string: baseURLString)!

@@ -1,7 +1,6 @@
 ///
 
 import CoreBluetooth
-import DP3TSDK
 import Foundation
 import UIKit
 

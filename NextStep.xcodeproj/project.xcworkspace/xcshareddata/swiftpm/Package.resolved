@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "DP3TSDK",
-        "repositoryURL": "https://github.com/DP-3T/dp3t-sdk-ios.git",
-        "state": {
-          "branch": "develop",
-          "revision": "ae498c80250b4ecbfcebf738bd0f04e7b535d6ab",
-          "version": null
-        }
-      },
-      {
         "package": "SnapKit",
         "repositoryURL": "https://github.com/SnapKit/SnapKit",
         "state": {

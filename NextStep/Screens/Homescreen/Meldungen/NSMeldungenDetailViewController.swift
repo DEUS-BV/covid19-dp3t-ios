@@ -77,13 +77,12 @@ class NSMeldungenDetailViewController: NSViewController {
 
         let titleColor = highlight ? UIColor.white : UIColor.ns_secondary
         let textColor = highlight ? UIColor.white : UIColor.ns_text
-        let image = highlight ? UIImage(named: "ic-info") : UIImage(named: "ic-check")
         let backgroundColor = highlight ? .ns_primary : UIColor(ub_hexString: "#d3f2ee")
 
         stackScrollView.addSpacerView(NSPadding.large)
 
         let container = UIView()
-        let view = NSBluetoothSettingsDetailView(title: title, subText: subText, image: image, titleColor: titleColor, subtextColor: textColor, backgroundColor: backgroundColor, backgroundInset: false, hasBubble: true)
+        let view = NSBluetoothSettingsDetailView(title: title, subText: subText, titleColor: titleColor, subtextColor: textColor, backgroundColor: backgroundColor, backgroundInset: false, hasBubble: true)
 
         container.addSubview(view)
 

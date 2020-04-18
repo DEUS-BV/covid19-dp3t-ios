@@ -5,7 +5,6 @@
  */
 
 import CoreBluetooth
-import DP3TSDK
 import Foundation
 import UIKit
 
@@ -87,9 +86,9 @@ class NSTracingManager: NSObject {
     func sendInformation(type _: InformationType, authString: String = "", completion: @escaping (Error?) -> Void) {
         // TODO: The onset timestamp should not be a hardcoded value, so this implementation
         // will likely change in the future, but at the moment it is unclear where the value will come from
-        let exposureOffset: TimeInterval = 60 * 60 * 24 * 14 // 14 days
-
-        DP3TTracing.iWasExposed(onset: Date().addingTimeInterval(-exposureOffset), authString: authString) { result in
+//        let exposureOffset: TimeInterval = 60 * 60 * 24 * 14 // 14 days
+        DP3TTracing.iWasExposed(onset: Date(), authString: authString) { result in
+//        DP3TTracing.iWasExposed(onset: Date().addingTimeInterval(-exposureOffset),
             DispatchQueue.main.async {
                 switch result {
                 case .success:
@@ -142,7 +141,7 @@ class NSTracingManager: NSObject {
 
     @UBOptionalUserDefault(key: "com.ubique.nextstep.lastDatabaseSync") private var lastDatabaseSync: Date?
     private var databaseIsSyncing = false
-    private var databaseSyncInterval: TimeInterval = 10
+    private var databaseSyncInterval: TimeInterval = 5 // 60 * 60 * 0.5 // once every half hour
 
     private func syncDatabase(completionHandler: ((UIBackgroundFetchResult) -> Void)?) {
         databaseIsSyncing = true

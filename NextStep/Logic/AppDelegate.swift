@@ -5,6 +5,7 @@
  */
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,25 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             willAppearAfterColdstart(application, coldStart: true, backgroundTime: 0)
         }
 
-        // setup and handle push
-        let pushHandler = NSPushHandler()
-        let pushRegistrationManager = UBPushRegistrationManager(registrationUrl: NSEndpoint.register.url)
-        UBPushManager.shared.didFinishLaunchingWithOptions(
-            launchOptions,
-            pushHandler: pushHandler,
-            pushRegistrationManager: pushRegistrationManager
-        )
+        UNUserNotificationCenter.current().delegate = self
 
         return true
     }
 
-    func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        UBPushManager.shared.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
-    }
+    func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken _: Data) {}
 
-    func application(_: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        UBPushManager.shared.didFailToRegisterForRemoteNotifications(with: error)
-    }
+    func application(_: UIApplication, didFailToRegisterForRemoteNotificationsWithError _: Error) {}
 
     private func shouldSetupWindow(application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         if application.applicationState == .background {
@@ -75,6 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let nvc = NSNavigationController(rootViewController: NSHomescreenViewController())
             nvc.setNavigationBarHidden(true, animated: false)
             window?.rootViewController = nvc
+//            window?.rootViewController = SplashScreenViewController()
         }
 
         setupAppearance()
@@ -113,6 +104,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         NSTracingManager.shared.performFetch(completionHandler: completionHandler)
+        // TODO:
+//        let notificationContent = UNMutableNotificationContent()
+//        notificationContent.title = "TEST TITLE"
+//        notificationContent.body = "TEST notificationContent.body"
+//        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
+//        let notificationRequest = UNNotificationRequest(identifier: "identifier", content: notificationContent, trigger: notificationTrigger)
+//        UNUserNotificationCenter.current().add(notificationRequest, withCompletionHandler: nil)
     }
 
     func application(_: UIApplication, didReceiveRemoteNotification _: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -138,5 +136,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .font: NSLabelType.textSemiBold.font,
             .foregroundColor: UIColor.ns_primary,
         ]
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_: UNUserNotificationCenter, willPresent _: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+    }
+
+    func userNotificationCenter(_: UNUserNotificationCenter, didReceive _: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
     }
 }

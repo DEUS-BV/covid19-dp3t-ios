@@ -43,7 +43,7 @@ class NSTabBarController: UITabBarController {
     private func style() {
         tabBar.tintColor = UIColor.ns_secondary
 
-        let font = UIFont(name: "Inter-Light", size: 12.0)
+        let font = UIFont(name: "Lato-Medium", size: 12.0)
         let attributes = [NSAttributedString.Key.font: font]
 
         UITabBarItem.appearance().setTitleTextAttributes(attributes as [NSAttributedString.Key: Any], for: .normal)

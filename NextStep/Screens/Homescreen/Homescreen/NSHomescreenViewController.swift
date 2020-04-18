@@ -5,7 +5,6 @@
  */
 
 import CoreBluetooth
-import DP3TSDK
 import SnapKit
 import UIKit
 
@@ -18,6 +17,7 @@ class NSHomescreenViewController: NSViewController {
     private let meldungView = NSMeldungView()
 
     private let informButton = NSButton(title: "inform_button_title".ub_localized, style: .primaryOutline)
+    private let syncButton = NSButton(title: "Sync now", style: .primaryOutline)
 
     // MARK: - View
 
@@ -54,6 +54,10 @@ class NSHomescreenViewController: NSViewController {
         informButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             NSInformViewController.present(from: strongSelf)
+        }
+
+        syncButton.touchUpCallback = {
+            NSTracingManager.shared.forceSyncDatabase()
         }
     }
 
@@ -111,9 +115,15 @@ class NSHomescreenViewController: NSViewController {
         stackScrollView.addArrangedView(buttonContainer)
         stackScrollView.addSpacerView(NSPadding.large)
 
-        let previewWarning = NSBluetoothSettingsDetailView(title: "preview_warning_title".ub_localized, subText: "preview_warning_text".ub_localized, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray)
-        stackScrollView.addArrangedView(previewWarning)
+        #if DEBUG
+        let syncButtonContainer = UIView()
+        syncButtonContainer.addSubview(syncButton)
+        syncButton.snp.makeConstraints { make in
+            make.top.bottom.centerX.equalToSuperview()
+        }
+        stackScrollView.addArrangedView(syncButtonContainer)
         stackScrollView.addSpacerView(NSPadding.large)
+        #endif
 
         handshakesModuleView.alpha = 0
         meldungView.alpha = 0

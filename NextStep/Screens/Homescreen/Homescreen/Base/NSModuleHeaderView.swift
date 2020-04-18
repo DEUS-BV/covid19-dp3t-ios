@@ -8,9 +8,10 @@ import SnapKit
 import UIKit
 
 class NSModuleHeaderView: UIView {
+    
     private let leftIconImageView = UIImageView()
-    private let titleLabel = NSLabel(.subtitle, textColor: .ns_primary)
-    private var rightCaretImageView = UIImageView(image: UIImage(named: "ic-arrow-forward")!.withRenderingMode(.alwaysTemplate))
+    private let titleLabel = NSLabel(.headline, textColor: .ns_secondary)
+    private var rightCaretImageView = UIImageView(image: UIImage(named: "ic-forward"))
 
     var icon: UIImage? {
         get { leftIconImageView.image }

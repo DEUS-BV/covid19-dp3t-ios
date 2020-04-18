@@ -6,7 +6,7 @@
 
 import UIKit
 
-public enum NSLabelType: UBLabelType {
+public enum NSLabelType: UBLabelType, Equatable {
     case title
     case subtitle
     case text
@@ -14,16 +14,23 @@ public enum NSLabelType: UBLabelType {
     case button // used for button
     case smallBold // used for begegnungen label
     case uppercaseBold
+    case headline
+    case latoLightItalic(size: CGFloat)
+    case latoRegular(size: CGFloat)
 
     public var font: UIFont {
         switch self {
-        case .title: return UIFont(name: "Inter-Bold", size: 28.0)!
-        case .subtitle: return UIFont(name: "Inter-Bold", size: 24.0)!
-        case .text: return UIFont(name: "Inter-Regular", size: 16.0)!
-        case .smallBold: return UIFont(name: "Inter-Bold", size: 12.0)!
-        case .textSemiBold: return UIFont(name: "Inter-SemiBold", size: 16.0)!
-        case .button: return UIFont(name: "Inter-Bold", size: 18.0)!
-        case .uppercaseBold: return UIFont(name: "Inter-Bold", size: 16.0)!
+        case .title: return UIFont(name: "Lato-BlackItalic", size: 36.0)!
+        case .subtitle: return UIFont(name: "Lato-Bold", size: 16.0)!
+        case .text: return UIFont(name: "Lato-Medium", size: 16.0)!
+        case .smallBold: return UIFont(name: "Lato-Bold", size: 12.0)!
+        case .textSemiBold: return UIFont(name: "Lato-Bold", size: 16.0)!
+        case .button: return UIFont(name: "Lato-Bold", size: 16.0)!
+        case .uppercaseBold: return UIFont(name: "Lato-Bold", size: 16.0)!
+        case .headline: return UIFont(name: "Lato-Bold", size: 22.0)!
+
+        case let .latoRegular(size): return UIFont(name: "Lato-Regular", size: size)!
+        case let .latoLightItalic(size): return UIFont(name: "Lato-LightItalic", size: size)!
         }
     }
 
@@ -46,6 +53,9 @@ public enum NSLabelType: UBLabelType {
         case .textSemiBold: return 24.0 / 16.0
         case .button, .smallBold: return 1.0
         case .uppercaseBold: return 26.0 / 16.0
+        case .headline: return 28.0 / 16.0
+        case .latoLightItalic: return 28
+        case .latoRegular: return 28
         }
     }
 
@@ -71,6 +81,21 @@ public enum NSLabelType: UBLabelType {
 
     public var lineBreakMode: NSLineBreakMode {
         return .byTruncatingTail
+    }
+
+    public static func == (lhs: NSLabelType, rhs: NSLabelType) -> Bool {
+        switch (lhs, rhs) {
+        case (.title, .title): return true
+        case (.subtitle, .subtitle): return true
+        case (.text, .text): return true
+        case (.textSemiBold, .textSemiBold): return true
+        case (.button, .button): return true
+        case (.smallBold, .smallBold): return true
+        case (.uppercaseBold, .uppercaseBold): return true
+        case let (.latoLightItalic(lhsS), .latoLightItalic(rhsS)): return lhsS == rhsS
+        case let (.latoRegular(lhsS), .latoRegular(rhsS)): return lhsS == rhsS
+        default: return false
+        }
     }
 }
 

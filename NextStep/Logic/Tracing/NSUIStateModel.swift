@@ -1,6 +1,5 @@
 ///
 
-import DP3TSDK
 import Foundation
 
 struct NSUIStateModel: Equatable {

@@ -8,8 +8,8 @@ import UIKit
 
 extension UIColor {
     // primary color
-    public static var ns_primary = UIColor(ub_hexString: "#5559a0")!
-    public static var ns_secondary = UIColor(ub_hexString: "#00bfa6")!
+    public static var ns_primary = UIColor(ub_hexString: "#F05300")!
+    public static var ns_secondary = UIColor(ub_hexString: "#535353")!
 
     // background of views
     public static var ns_background = UIColor.white
@@ -21,4 +21,6 @@ extension UIColor {
     public static var ns_text_secondary = UIColor(ub_hexString: "#e6e6e6")!
 
     public static var ns_error = UIColor(ub_hexString: "#ff6584")!
+
+    public static var ns_light_gray = UIColor(ub_hexString: "#707070")!
 }

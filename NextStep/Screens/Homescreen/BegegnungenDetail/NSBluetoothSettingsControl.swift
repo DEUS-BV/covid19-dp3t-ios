@@ -21,9 +21,9 @@ class NSBluetoothSettingsControl: UIView {
 
     private let line = UIView()
 
-    private let trackingActiveView = NSBluetoothSettingsDetailView(title: "bluetooth_setting_tracking_active".ub_localized, subText: "bluetooth_setting_tracking_active_subtext".ub_localized, image: UIImage(named: "ic-check"), titleColor: UIColor.ns_secondary, subtextColor: UIColor.ns_text)
+    private let trackingActiveView = NSBluetoothSettingsDetailView(title: "bluetooth_setting_tracking_active".ub_localized, subText: "bluetooth_setting_tracking_active_subtext".ub_localized, titleColor: UIColor.ns_secondary, subtextColor: UIColor.ns_text)
 
-    private let trackingUnactiveView = NSBluetoothSettingsDetailView(title: "bluetooth_setting_tracking_inactive".ub_localized, subText: "bluetooth_setting_tracking_inactive_subtext".ub_localized, image: UIImage(named: "ic-error"), titleColor: UIColor.ns_error, subtextColor: UIColor.ns_error)
+    private let trackingUnactiveView = NSBluetoothSettingsDetailView(title: "bluetooth_setting_tracking_inactive".ub_localized, subText: "bluetooth_setting_tracking_inactive_subtext".ub_localized, titleColor: UIColor.ns_error, subtextColor: UIColor.ns_error)
 
     var activeViewConstraint: Constraint?
     var unactiveViewConstraint: Constraint?

@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>WelzijNL</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -23,19 +25,16 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Bluetooth wird für Tracer verwendet.</string>
+	<string>Bluetooth is used by the Tracer.</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Bluetooth wird für Tracer verwendet.</string>
+	<string>Bluetooth is used by the Tracer.</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Inter-Regular.ttf</string>
-		<string>Inter-Black.ttf</string>
-		<string>Inter-Bold.ttf</string>
-		<string>Inter-ExtraBold.ttf</string>
-		<string>Inter-Light.ttf</string>
-		<string>Inter-Medium.ttf</string>
-		<string>Inter-SemiBold.ttf</string>
-		<string>Inter-ExtraLight.ttf</string>
+		<string>Lato-BlackItalic.ttf</string>
+		<string>Lato-Regular.ttf</string>
+		<string>Lato-Medium.ttf</string>
+		<string>Lato-Bold.ttf</string>
+		<string>Lato-LightItalic.ttf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>

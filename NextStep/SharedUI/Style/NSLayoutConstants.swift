@@ -7,7 +7,7 @@
 import UIKit
 
 class NSPadding {
-    public static let small: CGFloat = 5.0
-    public static let medium: CGFloat = 10.0
-    public static let large: CGFloat = 25.0
+    public static let small: CGFloat = 4.0
+    public static let medium: CGFloat = 12.0
+    public static let large: CGFloat = 26.0
 }

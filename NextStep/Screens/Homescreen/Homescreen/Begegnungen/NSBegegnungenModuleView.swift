@@ -4,7 +4,6 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-import DP3TSDK
 import SnapKit
 import UIKit
 
@@ -13,13 +12,13 @@ class NSBegegnungenModuleView: NSModuleBaseView {
         didSet { updateUI() }
     }
 
-    private let tracingActiveView = NSBluetoothSettingsDetailView(title: "tracing_active_title".ub_localized, subText: "tracing_active_text".ub_localized, image: UIImage(named: "ic-check")!, titleColor: .ns_secondary, subtextColor: .ns_text)
-    private let tracingInactiveView = NSBluetoothSettingsDetailView(title: "tracing_error_title".ub_localized, subText: "tracing_error_text".ub_localized, image: UIImage(named: "ic-error")!, titleColor: .ns_error, subtextColor: .ns_error)
+    private let tracingActiveView = NSBluetoothSettingsDetailView(title: "tracing_active_title".ub_localized, subText: "tracing_active_text".ub_localized, titleColor: .ns_secondary, subtextColor: .ns_text)
+    private let tracingInactiveView = NSBluetoothSettingsDetailView(title: "tracing_error_title".ub_localized, subText: "tracing_error_text".ub_localized, titleColor: .ns_error, subtextColor: .ns_error)
 
     override init() {
         super.init()
 
-        headerIcon = UIImage(named: "ic-begegnungen")!
+        headerIcon = UIImage(named: "ic-encounters")!
         headerTitle = "handshakes_title_homescreen".ub_localized
 
         updateUI()

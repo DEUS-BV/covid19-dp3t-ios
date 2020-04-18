@@ -17,12 +17,11 @@ class NSBluetoothSettingsDetailView: UIView {
 
     // MARK: - Init
 
-    init(title: String, subText: String, image: UIImage?, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, backgroundInset: Bool = true, hasBubble: Bool = false, additionalText: String? = nil) {
+    init(title: String, subText: String, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, backgroundInset: Bool = true, hasBubble: Bool = false, additionalText: String? = nil) {
         super.init(frame: .zero)
 
         titleLabel.text = title
         subtextLabel.text = subText
-        imageView.image = image
         titleLabel.textColor = titleColor
         subtextLabel.textColor = subtextColor
         additionalLabel.textColor = subtextColor
@@ -79,6 +78,7 @@ class NSBluetoothSettingsDetailView: UIView {
         imageView.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(NSPadding.medium * 2.0)
             make.top.equalToSuperview().inset(topBottomPadding)
+            make.width.height.equalTo(24.0)
         }
 
         titleLabel.snp.makeConstraints { make in

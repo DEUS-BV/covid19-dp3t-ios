@@ -55,65 +55,52 @@ open class UBPushManager: NSObject {
     /// The shared push manager which should be configured upon launch.
     public static let shared = UBPushManager()
 
-    /// Handles registration of push tokens on our server
-    public var pushRegistrationManager = UBPushRegistrationManager() {
-        didSet {
-            if let token = UBPushLocalStorage.shared.pushToken {
-                pushRegistrationManager.setPushToken(token)
-            }
-        }
-    }
-
-    /// Handles incoming pushes
-    public var pushHandler = UBPushHandler()
-
-    /// The push token for this device
-    public var pushToken: String? {
-        UBPushLocalStorage.shared.pushToken
-    }
-
-    /// The permission request callback of a pending permission requist, if any.
+//
+//    /// Handles incoming pushes
+//    public var pushHandler = UBPushHandler()
+//
+//    /// The permission request callback of a pending permission requist, if any.
     private var permissionRequestCallback: PermissionRequestCallback?
-
-    /// Counter to identify the latest push request
+//
+//    /// Counter to identify the latest push request
     private var latestPushRequest = 0
-
-    // MARK: - Initialization
-
-    /// :nodoc:
-    private override init() {
-        super.init()
-
-        UNUserNotificationCenter.current().delegate = self
-
-        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
-    }
-
-    // MARK: - App Delegate
-
-    /// Needs to be called inside `applicationDidFinishLaunchingWithOptions(_:launchOptions:)`
-    public func didFinishLaunchingWithOptions(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?,
-                                              pushHandler: UBPushHandler,
-                                              pushRegistrationManager: UBPushRegistrationManager) {
-        self.pushHandler = pushHandler
-        self.pushRegistrationManager = pushRegistrationManager
-        self.pushRegistrationManager.sendPushRegistrationIfOutdated()
-        self.pushHandler.handleLaunchOptions(launchOptions)
-    }
-
-    /// Needs to be called upon `applicationDidBecomeActiveNotification`
-    @objc
-    private func applicationDidBecomeActive() {
-        pushRegistrationManager.sendPushRegistrationIfOutdated()
-    }
-
-    // MARK: - Push Permission Request Flow
-
-    /// Requests push permissions
-    ///
-    /// - Parameters:
-    ///     - includingCritical: Also requests permissions for critical alerts; requires iOS 12 and needs special authorization from Apple
-    ///     - callback: The callback for handling the result of the request
+//
+//    // MARK: - Initialization
+//
+//    /// :nodoc:
+//    private override init() {
+//        super.init()
+//
+//        UNUserNotificationCenter.current().delegate = self
+//
+//        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+//    }
+//
+//    // MARK: - App Delegate
+//
+//    /// Needs to be called inside `applicationDidFinishLaunchingWithOptions(_:launchOptions:)`
+//    public func didFinishLaunchingWithOptions(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?,
+//                                              pushHandler: UBPushHandler,
+//                                              pushRegistrationManager: UBPushRegistrationManager) {
+//        self.pushHandler = pushHandler
+//        self.pushRegistrationManager = pushRegistrationManager
+//        self.pushRegistrationManager.sendPushRegistrationIfOutdated()
+//        self.pushHandler.handleLaunchOptions(launchOptions)
+//    }
+//
+//    /// Needs to be called upon `applicationDidBecomeActiveNotification`
+//    @objc
+//    private func applicationDidBecomeActive() {
+//        pushRegistrationManager.sendPushRegistrationIfOutdated()
+//    }
+//
+//    // MARK: - Push Permission Request Flow
+//
+//    /// Requests push permissions
+//    ///
+//    /// - Parameters:
+//    ///     - includingCritical: Also requests permissions for critical alerts; requires iOS 12 and needs special authorization from Apple
+//    ///     - callback: The callback for handling the result of the request
     public func requestPushPermissions(includingCritical: Bool = false,
                                        callback: @escaping PermissionRequestCallback) {
         if let previousCallback = permissionRequestCallback {
@@ -156,28 +143,6 @@ open class UBPushManager: NSObject {
         }
     }
 
-    /// Needs to be called inside `application(_:didRegisterForRemoteNotificationsWithDeviceToken:)`
-    public func didRegisterForRemoteNotificationsWithDeviceToken(_ token: Data) {
-        let tokenString = token.hexString
-
-        pushRegistrationManager.setPushToken(tokenString)
-
-        if let callback = permissionRequestCallback {
-            callback(.success)
-            permissionRequestCallback = nil
-        }
-    }
-
-    /// Needs to be called inside `application(_:didFailToRegisterForRemoteNotificationsWithError:)`
-    public func didFailToRegisterForRemoteNotifications(with _: Error) {
-        pushRegistrationManager.setPushToken(nil)
-
-        if let callback = permissionRequestCallback {
-            callback(.nonRecoverableFailure)
-            permissionRequestCallback = nil
-        }
-    }
-
     /// Querys the current push permissions from the system
     public func queryPushPermissions(callback: @escaping (Bool) -> Void) {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
@@ -187,27 +152,16 @@ open class UBPushManager: NSObject {
             }
         }
     }
-
-    // MARK: - Push Registration
-
-    /// Invalidates the current push registration, forcing a new registration request
-    public func invalidatePushRegistration() {
-        pushRegistrationManager.invalidate()
-    }
 }
 
 // MARK: - UNNotificationCenterDelegate
 
 extension UBPushManager: UNUserNotificationCenterDelegate {
     /// :nodoc:
-    public func userNotificationCenter(_: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        pushHandler.handleWillPresentNotification(notification, completionHandler: completionHandler)
-    }
+    public func userNotificationCenter(_: UNUserNotificationCenter, willPresent _: UNNotification, withCompletionHandler _: @escaping (UNNotificationPresentationOptions) -> Void) {}
 
     /// :nodoc:
-    public func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        pushHandler.handleDidReceiveResponse(response, completionHandler: completionHandler)
-    }
+    public func userNotificationCenter(_: UNUserNotificationCenter, didReceive _: UNNotificationResponse, withCompletionHandler _: @escaping () -> Void) {}
 }
 
 // MARK: - Permission Request Result with Settings URL

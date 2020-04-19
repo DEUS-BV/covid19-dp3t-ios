@@ -70,11 +70,18 @@ private class NSInformModuleCTAView: UIView {
         super.init(frame: .zero)
 
         setupLayout()
+        setupAccessibility()
         update()
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupAccessibility() {
+        infoLabel.accessibilityLanguage = Languages.current.languageCode
+        informButton.accessibilityLanguage = Languages.current.languageCode
+        lastMeldungLabel.accessibilityLanguage = Languages.current.languageCode
     }
 
     private func setupLayout() {
@@ -168,10 +175,17 @@ class NSInformModuleMeldungView: UIView {
         }
 
         setupLayout()
+        setupAccessibility()
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupAccessibility() {
+        timestampLabel.accessibilityLanguage = Languages.current.languageCode
+        gemeldetLabel.accessibilityLanguage = Languages.current.languageCode
+        whatToDoButton.accessibilityLanguage = Languages.current.languageCode
     }
 
     private func setupLayout() {

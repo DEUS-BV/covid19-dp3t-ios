@@ -32,7 +32,10 @@ class NSSymptomsViewController: NSInformBottomButtonViewController {
         }
 
         titleLabel.text = "inform_button_symptom_title".ub_localized
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
+
         textLabel.text = "inform_symptom_starttext".ub_localized
+        textLabel.accessibilityLanguage = Languages.current.languageCode
 
         contentView.addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in

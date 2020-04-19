@@ -18,7 +18,11 @@ class NSPointTextView: UIView {
         super.init(frame: .zero)
 
         pointLabel.text = "•"
+        pointLabel.accessibilityLabel = "accessibility_bullet_point_label".ub_localized
+        pointLabel.accessibilityLanguage = Languages.current.languageCode
+
         label.text = text
+        label.accessibilityLanguage = Languages.current.languageCode
 
         setup()
     }
@@ -31,7 +35,6 @@ class NSPointTextView: UIView {
 
     private func setup() {
         pointLabel.ub_setContentPriorityRequired()
-
         addSubview(pointLabel)
         addSubview(label)
 

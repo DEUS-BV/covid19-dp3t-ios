@@ -55,6 +55,7 @@ final class LanguageSelectionViewController: UIViewController {
         titleLabel.textColor = .white
         titleLabel.text = "language_selection_title".ub_localized
         titleLabel.textAlignment = .center
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
         titleLabel.numberOfLines = 2
         titleLabel.adjustsFontSizeToFitWidth = true
 
@@ -63,6 +64,7 @@ final class LanguageSelectionViewController: UIViewController {
         continueButton.titleLabel?.font = NSLabelType.headline.font
         continueButton.layer.borderWidth = 2.0
         continueButton.addTarget(self, action: #selector(didTapOnContinue), for: .touchUpInside)
+        continueButton.accessibilityLanguage = Languages.current.languageCode
         setContinueButton(enabled: false)
 
         languagesStackView.axis = .vertical
@@ -123,6 +125,7 @@ final class LanguageSelectionViewController: UIViewController {
             button.layer.borderColor = UIColor.white.cgColor
             button.titleLabel?.font = NSLabelType.headline.font
             button.addTarget(self, action: #selector(didSelectLanguageOption(_:)), for: .touchUpInside)
+            button.accessibilityLanguage = language.languageCode
             button.translatesAutoresizingMaskIntoConstraints = false
             button.heightAnchor.constraint(equalToConstant: 52).isActive = true
 

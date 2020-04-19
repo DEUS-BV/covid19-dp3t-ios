@@ -48,11 +48,13 @@ final class SplashScreenViewController: UIViewController {
         sloganLabel.font = NSLabelType.latoLightItalic(size: 26).font
         sloganLabel.textColor = UIColor.white.withAlphaComponent(0.45)
         sloganLabel.adjustsFontSizeToFitWidth = true
+        sloganLabel.accessibilityLanguage = Languages.dutch.languageCode
 
         messageLabel.text = "splash_message".ub_localized
         messageLabel.font = NSLabelType.latoRegular(size: 18).font
         messageLabel.textColor = UIColor.white.withAlphaComponent(0.45)
         messageLabel.adjustsFontSizeToFitWidth = true
+        messageLabel.accessibilityLanguage = Languages.dutch.languageCode
 
         stackView.axis = .vertical
         stackView.alignment = .center

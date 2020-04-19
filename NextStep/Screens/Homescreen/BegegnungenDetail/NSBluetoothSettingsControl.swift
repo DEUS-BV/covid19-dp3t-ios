@@ -36,12 +36,17 @@ class NSBluetoothSettingsControl: UIView {
         backgroundColor = .white
 
         titleLabel.text = "bluetooth_setting_title".ub_localized
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
+
         subtitleLabel.text = "bluetooth_setting_text".ub_localized
+        subtitleLabel.accessibilityLanguage = Languages.current.languageCode
+
         switchControl.onTintColor = .ns_secondary
 
         setup()
 
         switchControl.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
+        switchControl.accessibilityLanguage = Languages.current.languageCode
 
         NSUIStateManager.shared.addObserver(self, block: updateState(_:))
     }

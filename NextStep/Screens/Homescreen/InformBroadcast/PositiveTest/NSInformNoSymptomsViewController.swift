@@ -42,7 +42,10 @@ class NSInformNoSymptomsViewController: NSInformBottomButtonViewController {
         }
 
         titleLabel.text = "inform_empfehlung".ub_localized
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
+
         textLabel.text = "inform_empfehlung_subtext".ub_localized
+        textLabel.accessibilityLanguage = Languages.current.languageCode
 
         enableBottomButton = true
     }

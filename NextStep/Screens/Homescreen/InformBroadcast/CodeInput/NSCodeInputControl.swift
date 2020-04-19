@@ -52,6 +52,7 @@ class NSCodeControl: UIView {
     // MARK: - Setup
 
     private func setup() {
+        accessibilityLanguage = Languages.current.languageCode
         addSubview(stackView)
 
         stackView.snp.makeConstraints { make in

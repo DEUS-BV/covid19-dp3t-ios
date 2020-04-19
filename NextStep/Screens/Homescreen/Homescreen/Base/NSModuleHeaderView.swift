@@ -43,6 +43,7 @@ class NSModuleHeaderView: UIView {
         }
         leftIconImageView.image = icon
 
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
         titleLabel.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(NSPadding.medium)
             make.leading.equalTo(leftIconImageView.snp.trailing).offset(NSPadding.medium)

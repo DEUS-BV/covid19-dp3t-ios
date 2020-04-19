@@ -87,6 +87,7 @@ class NSBegegnungenDetailViewController: NSViewController {
 
         let titleLabel = NSLabel(.textSemiBold)
         titleLabel.text = title
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
 
         stackView.addArrangedView(titleLabel)
 

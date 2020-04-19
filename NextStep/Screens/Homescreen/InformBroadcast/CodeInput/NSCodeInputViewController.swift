@@ -27,7 +27,10 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
     private func setup() {
         titleLabel.text = "inform_code_title".ub_localized
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
+
         textLabel.text = "inform_code_text".ub_localized
+        textLabel.accessibilityLanguage = Languages.current.languageCode
 
         view.addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in
@@ -56,6 +59,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         let sendContainer = UIView()
         sendContainer.addSubview(sendButton)
 
+        sendButton.accessibilityLanguage = Languages.current.languageCode
         sendButton.snp.makeConstraints { make in
             make.top.bottom.centerX.equalToSuperview()
             make.right.lessThanOrEqualToSuperview()
@@ -69,6 +73,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         let noCodeContainer = UIView()
         noCodeContainer.addSubview(noCodeButton)
 
+        noCodeButton.accessibilityLanguage = Languages.current.languageCode
         noCodeButton.snp.makeConstraints { make in
             make.top.bottom.centerX.equalToSuperview()
             make.right.lessThanOrEqualToSuperview()

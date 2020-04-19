@@ -57,7 +57,7 @@ public class NSCheckBoxControl: UIControl {
         }
 
         clipsToBounds = true
-
+        accessibilityLanguage = Languages.current.languageCode
         layer.borderColor = isChecked ? UIColor.clear.cgColor : UIColor.ns_text_secondary.cgColor
         layer.borderWidth = 2
 

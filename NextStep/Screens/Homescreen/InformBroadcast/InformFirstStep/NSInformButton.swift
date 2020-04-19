@@ -24,6 +24,7 @@ class NSInformButton: NSButton {
     }
 
     private func setup() {
+        accessibilityLanguage = Languages.current.languageCode
         backgroundColor = .white
         highlightedBackgroundColor = .ns_background_secondary
 
@@ -36,11 +37,13 @@ class NSInformButton: NSButton {
         addSubview(informTitleLabel)
         addSubview(informTextLabel)
 
+        informTitleLabel.accessibilityLanguage = Languages.current.languageCode
         informTitleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(NSPadding.large)
             make.left.right.equalToSuperview().inset(2.0 * NSPadding.medium)
         }
 
+        informTextLabel.accessibilityLanguage = Languages.current.languageCode
         informTextLabel.snp.makeConstraints { make in
             make.top.equalTo(informTitleLabel.snp.bottom).offset(NSPadding.small)
             make.bottom.equalToSuperview().inset(NSPadding.large + NSPadding.medium)

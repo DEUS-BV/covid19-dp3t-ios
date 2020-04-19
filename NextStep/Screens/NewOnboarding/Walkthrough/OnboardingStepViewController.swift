@@ -60,11 +60,13 @@ final class OnboardingStepViewController: UIViewController, OnboardingView {
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.numberOfLines = 2
         titleLabel.textAlignment = .center
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
 
         messageLabel.textColor = UIColor.ns_black?.withAlphaComponent(0.7)
         messageLabel.font = NSLabelType.text.font
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
+        messageLabel.accessibilityLanguage = Languages.current.languageCode
 
         backgroundImageView.contentMode = .scaleAspectFit
         backgroundImageView.alpha = 0.3

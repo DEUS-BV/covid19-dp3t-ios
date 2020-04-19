@@ -65,10 +65,12 @@ final class PermissionButton: UIControl {
         titleLabel.textColor = UIColor.ns_black?.withAlphaComponent(0.5)
         titleLabel.font = NSLabelType.text.font
         titleLabel.numberOfLines = 0
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
 
         permissionNameLabel.textColor = .ns_secondary
         permissionNameLabel.font = NSLabelType.headline.font
         permissionNameLabel.numberOfLines = 0
+        permissionNameLabel.accessibilityLanguage = Languages.current.languageCode
 
         [iconImageView, titleLabel, permissionNameLabel, rightIcon].forEach(addSubview(_:))
     }

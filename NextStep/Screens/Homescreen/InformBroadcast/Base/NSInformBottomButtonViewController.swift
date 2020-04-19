@@ -71,5 +71,6 @@ class NSInformBottomButtonViewController: NSInformStepViewController {
         }
 
         button.isEnabled = enableBottomButton
+        button.accessibilityLanguage = Languages.current.languageCode
     }
 }

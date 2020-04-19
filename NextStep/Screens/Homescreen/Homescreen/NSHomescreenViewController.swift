@@ -89,6 +89,9 @@ class NSHomescreenViewController: NSViewController {
     private func setupButtons() {
         languageSelectionButton.setTitle(Languages.current.languageCode.uppercased(), for: .normal)
         languageSelectionButton.titleLabel?.font = NSLabelType.subtitle.font
+        languageSelectionButton.accessibilityLanguage = Languages.current.languageCode
+        languageSelectionButton.accessibilityHint = "dashboard_change_language_hint_label".ub_localized
+        languageSelectionButton.accessibilityLabel = Languages.current.name
         languageSelectionButton.addTarget(self,
                                           action: #selector(presentLanguageSelection),
                                           for: .touchUpInside)
@@ -99,18 +102,24 @@ class NSHomescreenViewController: NSViewController {
         hideStatusButton.setTitle("dashboard_show_status_button".ub_localized, for: .selected)
         hideStatusButton.titleLabel?.textAlignment = .right
         hideStatusButton.titleLabel?.font = NSLabelType.subtitle.font
+        hideStatusButton.accessibilityLanguage = Languages.current.languageCode
         hideStatusButton.addTarget(self,
                                    action: #selector(toggleHiddenStatus),
                                    for: .touchUpInside)
         hideStatusButton.setTitleColor(UIColor.white.withAlphaComponent(0.5),
                                        for: .normal)
+        hideStatusButton.isSelected = NSUIStateManager.shared.shouldHideStatus
     }
 
     private func setupLayout() {
+
+        let initialTitleSize = NSUIStateManager.shared.shouldHideStatus ? DesignGuidelines.titleCompactSize : DesignGuidelines.titleFullSize
+        let initialSpacerSize = NSUIStateManager.shared.shouldHideStatus ? DesignGuidelines.spacerCompactSize : DesignGuidelines.spacerFullSize
+
         view.addSubview(titleView)
         titleView.snp.makeConstraints { make in
             make.left.right.top.equalToSuperview()
-            make.height.equalTo(340)
+            make.height.equalTo(initialTitleSize)
         }
 
         stackScrollView.stackView.isLayoutMarginsRelativeArrangement = true
@@ -124,7 +133,7 @@ class NSHomescreenViewController: NSViewController {
         stackScrollView.scrollView.delegate = titleView
 
         spacerView.snp.makeConstraints { make in
-            make.height.equalTo(290)
+            make.height.equalTo(initialSpacerSize)
         }
         stackScrollView.addArrangedView(spacerView)
 
@@ -215,23 +224,23 @@ class NSHomescreenViewController: NSViewController {
 
     @objc private func toggleHiddenStatus() {
         hideStatusButton.isSelected = !hideStatusButton.isSelected
+        NSUIStateManager.shared.shouldHideStatus = hideStatusButton.isSelected
+        titleView.hideStatusUpdated()
         if hideStatusButton.isSelected {
-            titleView.uiState = .dontShow
             spacerView.snp.remakeConstraints { make in
-                make.height.equalTo(80)
+                make.height.equalTo(DesignGuidelines.spacerCompactSize)
             }
             titleView.snp.remakeConstraints { make in
                 make.left.right.top.equalToSuperview()
-                make.height.equalTo(140)
+                make.height.equalTo(DesignGuidelines.titleCompactSize)
             }
         } else {
-            titleView.uiState = NSUIStateManager.shared.uiState.homescreen.header
             spacerView.snp.remakeConstraints { make in
-                make.height.equalTo(290)
+                make.height.equalTo(DesignGuidelines.spacerFullSize)
             }
             titleView.snp.remakeConstraints { make in
                 make.left.right.top.equalToSuperview()
-                make.height.equalTo(340)
+                make.height.equalTo(DesignGuidelines.titleFullSize)
             }
         }
     }
@@ -254,3 +263,13 @@ class NSHomescreenViewController: NSViewController {
         }
     }
 }
+
+private struct DesignGuidelines {
+    static var spacerCompactSize: CGFloat { return 80.0 }
+    static var titleCompactSize: CGFloat { return 180.0 }
+
+    static var spacerFullSize: CGFloat { return 280.0 }
+    static var titleFullSize: CGFloat { return 380.0 }
+
+}
+

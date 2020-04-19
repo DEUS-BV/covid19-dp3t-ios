@@ -381,6 +381,7 @@
 "permission_notifications_name" = "Pushmeldingen";
 "permission_step_two" = "stap 2: activeer";
 
+"dashboard_change_language_hint_label" = "Verander de taal";
 "dashboard_hide_status_button" = "status verbergen";
 "dashboard_show_status_button" = "toon status";
 
@@ -390,3 +391,5 @@
 "header-covid-positive-subtitle" = "U bent positief getest op het COVID-19 virus. U moet in isolatie";
 "header-possible-exposure" = "mogelijke blootstelling";
 "header-covid-possible-subtitle" = "U bent in de buurt geweest van iemand die positief is getest op COVID-19";
+
+"accessibility_bullet_point_label" = "Bullet point";

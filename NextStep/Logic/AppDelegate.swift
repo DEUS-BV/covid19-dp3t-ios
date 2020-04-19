@@ -123,6 +123,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func setupAppearance() {
         UIBarButtonItem.appearance().tintColor = .ns_secondary
+        UIBarButtonItem.appearance().accessibilityLanguage = Languages.current.languageCode
 
         UINavigationBar.appearance().titleTextAttributes = [
             .font: NSLabelType.textSemiBold.font,

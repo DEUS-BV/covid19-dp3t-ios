@@ -88,16 +88,19 @@ final class OnboardingPermissionStepViewController: UIViewController, Onboarding
         titleLabel.font = NSLabelType.title.font
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = .center
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
 
         messageLabel.textColor = UIColor.ns_black?.withAlphaComponent(0.7)
         messageLabel.font = NSLabelType.text.font
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
+        messageLabel.accessibilityLanguage = Languages.current.languageCode
 
         thanksLabel.font = NSLabelType.latoBlackItalic(size: 28).font
         thanksLabel.text = "permission_thanks_label".ub_localized
         thanksLabel.numberOfLines = 0
         thanksLabel.isHidden = true
+        thanksLabel.accessibilityLanguage = Languages.current.languageCode
 
         stackView.axis = .vertical
         stackView.alignment = .fill

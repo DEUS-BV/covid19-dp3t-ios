@@ -48,7 +48,10 @@ class NSInformViewController: NSInformStepViewController {
         }
 
         titleLabel.text = "inform_title".ub_localized
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
+
         textLabel.text = "inform_subtext".ub_localized
+        textLabel.accessibilityLanguage = Languages.current.languageCode
 
         stackScrollView.addSpacerView(NSPadding.medium * 4.0)
         stackScrollView.addArrangedView(titleLabel)
@@ -60,11 +63,13 @@ class NSInformViewController: NSInformStepViewController {
         stackScrollView.addArrangedView(buttonPositive)
         stackScrollView.addSpacerView(NSPadding.medium * 3.0)
 
+        buttonSymptome.accessibilityLanguage = Languages.current.languageCode
         buttonSymptome.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(NSSymptomsViewController(), animated: true)
         }
 
+        buttonPositive.accessibilityLanguage = Languages.current.languageCode
         buttonPositive.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(NSSendViewController(flow: .tested), animated: true)

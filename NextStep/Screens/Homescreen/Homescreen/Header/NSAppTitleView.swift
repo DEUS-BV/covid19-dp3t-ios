@@ -40,6 +40,10 @@ class NSAppTitleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func hideStatusUpdated() {
+        updateState(animated: true)
+    }
+
     // MARK: - Setup
 
     private func setup() {
@@ -64,7 +68,7 @@ class NSAppTitleView: UIView {
         circle.contentMode = .scaleAspectFit
         circle.snp.makeConstraints { make in
             make.height.width.equalTo(86.0)
-            make.centerY.equalToSuperview().inset(NSPadding.large * 40)
+            make.bottom.equalTo(self.snp.centerY)
             make.centerX.equalToSuperview()
         }
 
@@ -73,6 +77,7 @@ class NSAppTitleView: UIView {
         titleLabel.textColor = UIColor.white
         titleLabel.textAlignment = .center
         titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
         titleLabel.snp.makeConstraints { make in
             make.width.equalToSuperview().inset(NSPadding.large)
             make.top.equalTo(circle.snp.bottom).offset(NSPadding.large)
@@ -84,6 +89,7 @@ class NSAppTitleView: UIView {
         subtitleLabel.textColor = UIColor.white.withAlphaComponent(0.5)
         subtitleLabel.textAlignment = .center
         subtitleLabel.numberOfLines = 2
+        subtitleLabel.accessibilityLanguage = Languages.current.languageCode
         subtitleLabel.adjustsFontSizeToFitWidth = true
         subtitleLabel.snp.makeConstraints { make in
             make.width.equalToSuperview().inset(NSPadding.large)
@@ -117,7 +123,7 @@ class NSAppTitleView: UIView {
 
     @objc
     private func hightlight() {
-        if uiState == .error {
+        if uiState != .normal {
             return // no highlight in error state
         }
 
@@ -132,7 +138,7 @@ class NSAppTitleView: UIView {
 
     @objc
     private func spawnCircle(force: Bool = false) {
-        if uiState != .normal {
+        if uiState != .normal || NSUIStateManager.shared.shouldHideStatus {
             return // only show animation when in "normal" state
         }
 
@@ -150,7 +156,7 @@ class NSAppTitleView: UIView {
             contentView.addSubview(arc)
 
             arc.snp.makeConstraints { make in
-                make.center.equalToSuperview()
+                make.center.equalTo(circle.center)
             }
 
             UIView.animate(withDuration: 0.5, delay: 0.0, options: [], animations: {
@@ -177,6 +183,14 @@ class NSAppTitleView: UIView {
             return
         }
 
+        if NSUIStateManager.shared.shouldHideStatus {
+            circle.image = nil
+            backgroundImageView.image = UIImage(named: "orange-background")
+            titleLabel.text = nil
+            subtitleLabel.text = nil
+            return
+        }
+
         switch uiState {
         case .normal:
             circle.image = UIImage(named: "title-circle-normal")
@@ -196,11 +210,11 @@ class NSAppTitleView: UIView {
             titleLabel.text = "header-possible-exposure".ub_localized
             subtitleLabel.text = "header-covid-possible-subtitle".ub_localized
 
-        case .dontShow:
-            circle.image = nil
-            backgroundImageView.image = UIImage(named: "orange-background")
-            titleLabel.text = nil
-            subtitleLabel.text = nil
+        case .tracingInactive:
+            circle.image = UIImage(named: "title-circle-warning")
+            backgroundImageView.image = UIImage(named: "titlebackground-warning")
+            titleLabel.text = "tracing_error_title".ub_localized
+            subtitleLabel.text = ""
         }
     }
 }

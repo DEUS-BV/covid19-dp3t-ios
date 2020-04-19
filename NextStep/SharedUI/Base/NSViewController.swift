@@ -38,6 +38,8 @@ class NSViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        accessibilityLanguage = Languages.current.languageCode
+        navigationItem.accessibilityLanguage = Languages.current.languageCode
         view.backgroundColor = UIColor.ns_background
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)

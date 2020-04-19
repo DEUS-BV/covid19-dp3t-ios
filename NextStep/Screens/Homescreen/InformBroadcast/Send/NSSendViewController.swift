@@ -53,7 +53,11 @@ class NSSendViewController: NSInformBottomButtonViewController {
 
     private func setupSymptoms() {
         titleLabel.text = "inform_button_symptom_title".ub_localized
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
+
         textLabel.text = "inform_symptoms_send_text".ub_localized
+        textLabel.accessibilityLanguage = Languages.current.languageCode
+
         bottomButtonTitle = "inform_send_button_title".ub_localized
 
         bottomButtonTouchUpCallback = { [weak self] in

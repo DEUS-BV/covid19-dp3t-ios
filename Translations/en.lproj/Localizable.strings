@@ -380,6 +380,7 @@
 "permission_notifications_name" = "Push Notifications";
 "permission_step_two" = "step 2: activate";
 
+"dashboard_change_language_hint_label" = "Change language";
 "dashboard_hide_status_button" = "hide status";
 "dashboard_show_status_button" = "show status";
 
@@ -389,3 +390,5 @@
 "header-covid-positive-subtitle" = "You have tested positive for the COVID-19 virus. You must isolate";
 "header-possible-exposure" = "possible exposure";
 "header-covid-possible-subtitle" = "You have been near someone that has tested positive for COVID-19";
+
+"accessibility_bullet_point_label" = "Bullet point";

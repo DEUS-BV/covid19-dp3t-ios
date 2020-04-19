@@ -23,7 +23,10 @@ class NSNoCodeInformationViewController: NSInformStepViewController {
 
     private func setup() {
         titleLabel.text = "inform_code_no_code".ub_localized
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
+
         textLabel.text = "exposed_info_support_text".ub_localized
+        textLabel.accessibilityLanguage = Languages.current.languageCode
 
         view.addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in
@@ -40,6 +43,7 @@ class NSNoCodeInformationViewController: NSInformStepViewController {
         let sendContainer = UIView()
         sendContainer.addSubview(sendButton)
 
+        sendButton.accessibilityLanguage = Languages.current.languageCode
         sendButton.snp.makeConstraints { make in
             make.top.bottom.centerX.equalToSuperview()
             make.right.lessThanOrEqualToSuperview()

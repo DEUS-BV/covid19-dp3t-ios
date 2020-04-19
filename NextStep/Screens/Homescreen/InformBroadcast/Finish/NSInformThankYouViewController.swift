@@ -46,6 +46,9 @@ class NSInformThankYouViewController: NSInformBottomButtonViewController {
             strongSelf.sendPressed()
         }
 
+        titleLabel.accessibilityLanguage = Languages.current.languageCode
+        textLabel.accessibilityLanguage = Languages.current.languageCode
+
         if NSContentEnvironment.current.isGenericTracer {
             titleLabel.text = "inform_send_thankyou".ub_localized
             textLabel.text = "inform_send_thankyou_text_star".ub_localized

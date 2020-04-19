@@ -13,7 +13,7 @@ struct NSUIStateModel: Equatable {
             case normal
             case error
             case warning
-            case dontShow
+            case tracingInactive
         }
 
         struct Begegnungen: Equatable {

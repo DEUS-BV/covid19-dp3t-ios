@@ -71,6 +71,7 @@ class NSButton: UBButton {
         super.init()
 
         self.title = title
+        accessibilityLanguage = Languages.current.languageCode
         titleLabel?.font = NSLabelType.button.font
         setTitleColor(style.textColor, for: .normal)
         backgroundColor = style.backgroundColor

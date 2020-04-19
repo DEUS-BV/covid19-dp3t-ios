@@ -60,6 +60,7 @@ class NSCheckBoxView: UIView {
 
         addSubview(textLabel)
 
+        textLabel.accessibilityLanguage = Languages.current.languageCode
         textLabel.snp.makeConstraints { make in
             make.left.equalTo(checkBox.snp.right).offset(NSPadding.medium + NSPadding.small)
             make.top.equalToSuperview()

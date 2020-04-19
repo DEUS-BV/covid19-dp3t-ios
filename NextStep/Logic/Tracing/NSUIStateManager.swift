@@ -86,6 +86,9 @@ class NSUIStateManager: NSObject {
         uiState = reloadedUIState()
     }
 
+    @UBUserDefault(key: "ai.deus.covid19.hideStatus", defaultValue: false)
+    var shouldHideStatus: Bool
+
     func reloadedUIState() -> NSUIStateModel {
         var newState = NSUIStateModel()
 
@@ -93,7 +96,7 @@ class NSUIStateManager: NSObject {
 
         switch tracingState?.trackingState {
         case .active:
-            // skd says tracking works.
+            // sdk says tracking works.
 
             // other checks, maybe not needed
             if anyError != nil || !bluetoothOk || !tracingIsActivated {
@@ -105,7 +108,7 @@ class NSUIStateManager: NSObject {
         }
 
         if tracingNotWorking {
-            newState.homescreen.header = .error
+            newState.homescreen.header = .tracingInactive
             newState.homescreen.begegnungen.tracing = .inactive
         }
 

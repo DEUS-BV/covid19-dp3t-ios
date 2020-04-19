@@ -42,6 +42,7 @@ final class OnboardingViewController: UIViewController {
 
         continueButton.setTitleColor(UIColor.black.withAlphaComponent(0.7), for: .normal)
         continueButton.setTitleColor(UIColor.ns_light_gray.withAlphaComponent(0.7), for: .disabled)
+        continueButton.accessibilityLanguage = Languages.current.languageCode
         setContinueButton(asFinal: false)
         continueButton.addTarget(self, action: #selector(didTapOnContinue), for: .touchUpInside)
 

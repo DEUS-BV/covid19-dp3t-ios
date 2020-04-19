@@ -23,10 +23,16 @@ class NSBluetoothSettingsDetailView: UIView {
         mainLabel.attributedText = createAttributedTitle(from: title, and: subText)
         mainLabel.textColor = titleColor
         mainLabel.numberOfLines = 0
+        mainLabel.accessibilityLanguage = Languages.current.languageCode
+
         subtextLabel.text = subText
-        imageView.image = image
         subtextLabel.textColor = subtextColor
+        subtextLabel.accessibilityLanguage = Languages.current.languageCode
+
+        imageView.image = image
+
         additionalLabel.textColor = subtextColor
+        additionalLabel.accessibilityLanguage = Languages.current.languageCode
 
         setup(backgroundColor: backgroundColor, backgroundInset: backgroundInset, hasBubble: hasBubble, additionalText: additionalText)
     }

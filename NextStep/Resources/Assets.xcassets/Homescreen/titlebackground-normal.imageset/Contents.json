@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "titlebackground-normal.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

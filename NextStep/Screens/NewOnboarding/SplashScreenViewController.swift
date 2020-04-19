@@ -20,6 +20,14 @@ final class SplashScreenViewController: UIViewController {
         setupConstraints()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+            self?.goToLanguageSelection()
+        }
+    }
+
     // MARK: Interface
 
     // MARK: Private
@@ -39,10 +47,12 @@ final class SplashScreenViewController: UIViewController {
         sloganLabel.text = "splash_slogan".ub_localized
         sloganLabel.font = NSLabelType.latoLightItalic(size: 26).font
         sloganLabel.textColor = UIColor.white.withAlphaComponent(0.45)
+        sloganLabel.adjustsFontSizeToFitWidth = true
 
         messageLabel.text = "splash_message".ub_localized
         messageLabel.font = NSLabelType.latoRegular(size: 18).font
         messageLabel.textColor = UIColor.white.withAlphaComponent(0.45)
+        messageLabel.adjustsFontSizeToFitWidth = true
 
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -67,7 +77,26 @@ final class SplashScreenViewController: UIViewController {
             view.bottomAnchor.constraint(equalTo: backgroundImageView.bottomAnchor),
 
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32.0),
+            view.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 32.0),
         ])
+    }
+
+    // MARK: Animations
+
+    private func goToLanguageSelection(animated _: Bool = true) {
+        let transition = CATransition()
+        transition.duration = CFTimeInterval(0.5)
+        transition.type = CATransitionType.fade
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+
+        UIApplication.shared.keyWindow?.layer.add(transition, forKey: nil)
+
+        if User.shared.hasCompletedOnboarding {
+            let navigationController = UINavigationController(rootViewController: NSHomescreenViewController())
+            UIApplication.shared.keyWindow?.rootViewController = navigationController
+        } else {
+            UIApplication.shared.keyWindow?.rootViewController = LanguageSelectionViewController()
+        }
     }
 }

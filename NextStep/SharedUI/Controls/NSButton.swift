@@ -70,11 +70,7 @@ class NSButton: UBButton {
 
         super.init()
 
-        if style == .primaryOutline {
-            self.title = title.uppercased()
-        } else {
-            self.title = title
-        }
+        self.title = title
         titleLabel?.font = NSLabelType.button.font
         setTitleColor(style.textColor, for: .normal)
         backgroundColor = style.backgroundColor

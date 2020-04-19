@@ -6,8 +6,8 @@
 
 import Foundation
 
-import MapKit
 import SnapKit
+import UIKit
 
 class NSHeaderArcView: UIView {
     var angle: CGFloat = 0.0 {
@@ -26,15 +26,15 @@ class NSHeaderArcView: UIView {
 
         var startAngle: CGFloat {
             switch self {
-            case .left: return 210.0 / 180.0 * CGFloat.pi
-            case .right: return 30.0 / 180.0 * CGFloat.pi
+            case .left: return 0
+            case .right: return 2 * CGFloat.pi
             }
         }
 
         var endAngle: CGFloat {
             switch self {
-            case .left: return 150.0 / 180.0 * CGFloat.pi
-            case .right: return 330.0 / 180.0 * CGFloat.pi
+            case .left: return 2 * CGFloat.pi
+            case .right: return 0
             }
         }
     }
@@ -58,9 +58,9 @@ class NSHeaderArcView: UIView {
 
         shapeLayer.path = path.cgPath
 
-        shapeLayer.lineWidth = 6
+        shapeLayer.lineWidth = 1
 
-        shapeLayer.strokeColor = UIColor(white: 0.0, alpha: 0.1).cgColor
+        shapeLayer.strokeColor = UIColor.homescreen_title_circle.withAlphaComponent(0.7).cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
 
         layer.addSublayer(shapeLayer)

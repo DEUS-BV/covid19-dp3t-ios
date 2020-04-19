@@ -58,15 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.overrideUserInterfaceStyle = .light
         }
         window?.makeKey()
-
-        if NSContentEnvironment.current.hasTabBar {
-            window?.rootViewController = NSTabBarController()
-        } else {
-            let nvc = NSNavigationController(rootViewController: NSHomescreenViewController())
-            nvc.setNavigationBarHidden(true, animated: false)
-            window?.rootViewController = nvc
-//            window?.rootViewController = SplashScreenViewController()
-        }
+        window?.rootViewController = SplashScreenViewController()
 
         setupAppearance()
 

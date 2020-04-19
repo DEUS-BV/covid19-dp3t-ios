@@ -8,6 +8,10 @@ import UIKit
 
 extension String {
     var ub_localized: String {
-        NSLocalizedString(self, comment: "")
+        let tableName = "Localizable"
+
+        let path = Bundle.main.path(forResource: tableName, ofType: "strings", inDirectory: nil, forLocalization: Languages.current.languageCode)!
+        let localBundle = Bundle(path: URL(fileURLWithPath: path).deletingLastPathComponent().relativePath)!
+        return NSLocalizedString(self, tableName: tableName, bundle: localBundle, value: self, comment: "")
     }
 }

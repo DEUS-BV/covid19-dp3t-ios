@@ -17,18 +17,16 @@ class NSAppTitleView: UIView {
         }
     }
 
+    let backgroundImageView = UIImageView()
     let highlightView = UIView()
 
     // Safe-area aware container
     let contentView = UIView()
 
     // Content
-    let circle = UIImageView(image: UIImage(named: "header-circle"))
-
-    let iconContainer = UIView()
-    let checkmark = NSCheckBoxControl(isChecked: true, noBorder: true)
-    let info = UIImageView(image: UIImage(named: "header-info"))
-    let warning = UIImageView(image: UIImage(named: "header-warning"))
+    let circle = UIImageView()
+    let titleLabel = UILabel()
+    let subtitleLabel = UILabel()
 
     init() {
         super.init(frame: .zero)
@@ -45,6 +43,11 @@ class NSAppTitleView: UIView {
     // MARK: - Setup
 
     private func setup() {
+        addSubview(backgroundImageView)
+        backgroundImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
         addSubview(highlightView)
         highlightView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -58,28 +61,34 @@ class NSAppTitleView: UIView {
         }
 
         contentView.addSubview(circle)
+        circle.contentMode = .scaleAspectFit
         circle.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.height.width.equalTo(86.0)
+            make.centerY.equalToSuperview().inset(NSPadding.large * 40)
+            make.centerX.equalToSuperview()
         }
 
-        contentView.addSubview(iconContainer)
-        iconContainer.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+        contentView.addSubview(titleLabel)
+        titleLabel.font = NSLabelType.headerTitle.font
+        titleLabel.textColor = UIColor.white
+        titleLabel.textAlignment = .center
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.snp.makeConstraints { make in
+            make.width.equalToSuperview().inset(NSPadding.large)
+            make.top.equalTo(circle.snp.bottom).offset(NSPadding.large)
+            make.centerX.equalToSuperview()
         }
-        iconContainer.backgroundColor = .clear
 
-        checkmark.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
-        iconContainer.addSubview(checkmark)
-        checkmark.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-        }
-        iconContainer.addSubview(info)
-        info.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-        }
-        iconContainer.addSubview(warning)
-        warning.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+        contentView.addSubview(subtitleLabel)
+        subtitleLabel.font = NSLabelType.smallText.font
+        subtitleLabel.textColor = UIColor.white.withAlphaComponent(0.5)
+        subtitleLabel.textAlignment = .center
+        subtitleLabel.numberOfLines = 2
+        subtitleLabel.adjustsFontSizeToFitWidth = true
+        subtitleLabel.snp.makeConstraints { make in
+            make.width.equalToSuperview().inset(NSPadding.large)
+            make.top.equalTo(titleLabel.snp.bottom).offset(NSPadding.medium)
+            make.centerX.equalToSuperview()
         }
     }
 
@@ -88,8 +97,6 @@ class NSAppTitleView: UIView {
 
         circle.alpha = 0
         circle.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        iconContainer.alpha = 0
-        iconContainer.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
 
         UIView.animate(withDuration: 0.3, delay: 0.0 + initialDelay, options: [], animations: {
             self.circle.alpha = 1
@@ -97,19 +104,12 @@ class NSAppTitleView: UIView {
         UIView.animate(withDuration: 1.0, delay: 0.0 + initialDelay, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {
             self.circle.transform = .identity
         }, completion: nil)
-
-        UIView.animate(withDuration: 0.3, delay: 0.3 + initialDelay, options: [], animations: {
-            self.iconContainer.alpha = 1
-        }, completion: nil)
-        UIView.animate(withDuration: 1.0, delay: 0.3 + initialDelay, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {
-            self.iconContainer.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        }, completion: nil)
     }
 
     private var timer: Timer?
     private var slowTimer: Timer?
     private func startSpawn() {
-        timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(spawnArcs), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(spawnCircle), userInfo: nil, repeats: true)
         slowTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(hightlight), userInfo: nil, repeats: true)
     }
 
@@ -131,9 +131,9 @@ class NSAppTitleView: UIView {
     }
 
     @objc
-    private func spawnArcs(force: Bool = false) {
-        if uiState == .error {
-            return // no arcs in error state
+    private func spawnCircle(force: Bool = false) {
+        if uiState != .normal {
+            return // only show animation when in "normal" state
         }
 
         guard Float.random(in: 0 ... 1) > 0.3 || force else {
@@ -179,20 +179,28 @@ class NSAppTitleView: UIView {
 
         switch uiState {
         case .normal:
-            backgroundColor = .ns_secondary
-            checkmark.isHidden = false
-            info.isHidden = true
-            warning.isHidden = true
+            circle.image = UIImage(named: "title-circle-normal")
+            backgroundImageView.image = UIImage(named: "titlebackground-normal")
+            titleLabel.text = "header-no-known-contact-title".ub_localized
+            subtitleLabel.text = "header-no-known-contact-subtitle".ub_localized
+
         case .error:
-            backgroundColor = .ns_error
-            checkmark.isHidden = true
-            info.isHidden = true
-            warning.isHidden = false
+            circle.image = UIImage(named: "title-circle-warning")
+            backgroundImageView.image = UIImage(named: "titlebackground-error")
+            titleLabel.text = "header-covid-positive".ub_localized
+            subtitleLabel.text = "header-covid-positive-subtitle".ub_localized
+
         case .warning:
-            backgroundColor = .ns_primary
-            checkmark.isHidden = true
-            info.isHidden = false
-            warning.isHidden = true
+            circle.image = UIImage(named: "title-circle-warning")
+            backgroundImageView.image = UIImage(named: "titlebackground-warning")
+            titleLabel.text = "header-possible-exposure".ub_localized
+            subtitleLabel.text = "header-covid-possible-subtitle".ub_localized
+
+        case .dontShow:
+            circle.image = nil
+            backgroundImageView.image = UIImage(named: "orange-background")
+            titleLabel.text = nil
+            subtitleLabel.text = nil
         }
     }
 }
@@ -207,17 +215,13 @@ extension NSAppTitleView: UIScrollViewDelegate {
             if overscrolled {
                 for delay in stride(from: 0, to: 1.0, by: 0.5) {
                     DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-                        self.spawnArcs(force: true)
+                        self.spawnCircle(force: true)
                     }
                 }
             }
         }
 
-        let inNegativeFactor = max(0, min(1, -offset / 10.0))
         let inPositiveFactor = max(0, min(1, offset / 70.0))
-
-        let s = 1.0 + inNegativeFactor * 0.5
-        iconContainer.transform = CGAffineTransform(scaleX: s, y: s)
 
         let a = 1.0 - inPositiveFactor
         let t1 = inPositiveFactor * 25.0

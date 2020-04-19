@@ -112,7 +112,7 @@
 "inform_heading_homescreen" = " ";
 "inform_title_homescreen" = "Suspicion of COVID-19";
 "inform_text_homescreen" = "Inform users you've recently encountered if you experience symptoms or if you've tested positive for COVID-19";
-"inform_button_title" = "Inform now";
+"inform_button_title" = "Report illness";
 "inform_button_title_again" = "Inform again";
 "inform_last_meldung_text" = "last successful signal";
 
@@ -194,9 +194,6 @@
 "push_activated_label" = "Push activated";
 "onboarding_continue_button" = "Next";
 "onboarding_continue_without_button" = "Continue without authorization";
-"onboarding_continue_without_popup_text" = "Do you really want to continue? The App can only work with the required permissions.";
-"onboarding_continue_without_popup_abort" = "Cancel";
-"onboarding_continue_without_popup_continue" = "Continue";
 "onboarding_finish_button" = "Finish";
 "button_battery_optimization" = "Deactivate battery optimization";
 "button_battery_optimization_deactivated" = "Activate battery optimization";
@@ -357,3 +354,38 @@
 
 /*Text der Nachricht, die auf Beta-Status Hinweist*/
 "preview_warning_text" = "This app was built as a preview to demonstrate the DP-3T implementation. It is not a final COVID-19 tracer.";
+
+"splash_slogan" = "met elkaar, voor elkaar";
+"splash_message" = "samen verslaan we COVID-19";
+
+"language_selection_title" = "Select your language";
+"language_selection_continue_button_title" = "Let's go";
+"language_selection_save_button_title" = "Save";
+
+"onboarding_step_one_title" = "Privacy-first\ncontact tracing";
+"onboarding_step_one_message" = "Help limit the COVID-19 virus with completely anonymous tracing.\nThis app recognises encounters with other users and saves them anonymously on your device using encryption.";
+"onboarding_step_two_title" = "Inform and be informed";
+"onboarding_step_two_message" = "You will get notified when you have been near someone with COVID-19, and if you test positive you can anonymously inform everyone you’ve encountered so that they can take the necessary measures.";
+"onboarding_step_permission_title" = "Let’s set up\nyour phone";
+"onboarding_step_permission_message" = "This app needs the following permissions to work properly.";
+"onboarding_done_button_title" = "OK done";
+"onboarding_next_button_title" = "next";
+"onboarding_continue_without_popup_text" = "Do you really want to continue? The App can only work with the required permissions.";
+"onboarding_continue_without_popup_abort" = "Cancel";
+"onboarding_continue_without_popup_continue" = "Continue";
+
+"permission_thanks_label" = "Thank you!";
+"permission_bluetooth_name" = "Bluetooth";
+"permission_step_one" = "step 1: activate";
+"permission_notifications_name" = "Push Notifications";
+"permission_step_two" = "step 2: activate";
+
+"dashboard_hide_status_button" = "hide status";
+"dashboard_show_status_button" = "show status";
+
+"header-no-known-contact-title" = "No known contact";
+"header-no-known-contact-subtitle" = "You haven’t been near anyone that has tested positive for COVID-19";
+"header-covid-positive" = "COVID-19 positive";
+"header-covid-positive-subtitle" = "You have tested positive for the COVID-19 virus. You must isolate";
+"header-possible-exposure" = "possible exposure";
+"header-covid-possible-subtitle" = "You have been near someone that has tested positive for COVID-19";

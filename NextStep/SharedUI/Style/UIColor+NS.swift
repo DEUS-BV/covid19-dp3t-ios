@@ -23,4 +23,14 @@ extension UIColor {
     public static var ns_error = UIColor(ub_hexString: "#ff6584")!
 
     public static var ns_light_gray = UIColor(ub_hexString: "#707070")!
+    public static var ns_lighter_gray = UIColor(ub_hexString: "#B4B4B4")!
+    public static var ns_gray = UIColor(ub_hexString: "#D8D8D8")
+    public static var ns_black = UIColor(ub_hexString: "#1C1C1C")
+
+    public static var ns_orange = UIColor(ub_hexString: "#FF7300")
+
+    public static var homescreen_text = UIColor(ub_hexString: "#1c1c1c")!
+    public static var homescreen_green_background = UIColor(ub_hexString: "0B8875")!.withAlphaComponent(0.1)
+    public static var homescreen_error_background = UIColor(ub_hexString: "A5365D")!
+    public static var homescreen_title_circle = UIColor(ub_hexString: "6CFF72")!
 }

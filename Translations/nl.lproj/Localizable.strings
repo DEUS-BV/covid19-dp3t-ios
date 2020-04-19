@@ -112,7 +112,7 @@
 "inform_heading_homescreen" = " ";
 "inform_title_homescreen" = "Verdenking van COVID-19";
 "inform_text_homescreen" = "Informeer gebruikers waarmee jij recente ontmoetingen gehad hebt als jij symptomen ervaart of positief getest bent voor COVID-19.";
-"inform_button_title" = "Informeer nu";
+"inform_button_title" = "Meld ziekte";
 "inform_button_title_again" = "Informeer weer";
 "inform_last_meldung_text" = "laatste succesvolle signaal";
 
@@ -194,9 +194,6 @@
 "push_activated_label" = "Meldingen geactiveerd";
 "onboarding_continue_button" = "Volgende";
 "onboarding_continue_without_button" = "Ga door zonder toestemming";
-"onboarding_continue_without_popup_text" = "Weet je zeker dat je door wil gaan zonder toestemming te geven? De app kan alleen werken met gevraagde toestemming.";
-"onboarding_continue_without_popup_abort" = "Stoppen";
-"onboarding_continue_without_popup_continue" = "Doorgaan";
 "onboarding_finish_button" = "Afronden";
 "button_battery_optimization" = "Deactiveer batterij-optimalisatie";
 "button_battery_optimization_deactivated" = "Activeer batterij-optimalisatie";
@@ -274,7 +271,7 @@
 "bluetooth_setting_tracking_explanation_text2" = "Contacten met andere gebruikers worden alleen lokaal opgeslagen op jouw telefoon.";
 
 /*Bluetooth Setting: Text unten*/
-"bluetooth_setting_data_explanation_text1" = "Elke app heeft zijn eigen dynamische ID die random is gegenereerd via «HMAC(SHA256)» en veranderd elke 15 minuten. Op deze manier blijft elke gebruiker anoniem.";
+"bluetooth_setting_data_explanation_text1" = "Elke app heeft zijn eigen dynamische ID die random is gegenereerd via «HMAC(SHA256)» en verandert elke 15 minuten. Op deze manier blijft elke gebruiker anoniem.";
 
 /*Bluetooth Setting: Text unten*/
 "bluetooth_setting_data_explanation_text2" = "Belangrijke features:\n- Geen locatie tracking\n- Geen analytics of advertenties\n- Open architectuur / protocol en specificatie incl. SDK voor iOS en Android\n- Interoperabiliteit (eigen app, eigen backend)\n- Open source";
@@ -310,7 +307,7 @@
 "meldungen_additional_info_title" = "Wat betekent dit?";
 
 /*Meldungen: Info Text 1*/
-"meldungen_additional_info_text1" = "Om een virusuitbraak te voorkomen, moet de besmettingsketen worden doorbroken. Dit kan worden gedaan door het isoleren van besmette personen. Dit is lastig in het geval van COVID-19, omdat besmette personen andere mensen kunnen infecteren nog voordat zij zelf symptomen vertonen. Dit betekent dat je het virus zou kunnen verspreiden zonder het te weten. Als alleen de mensen die symptomen zichzelf isoleren, kan het virus zich dus nog steeds verspreiden. In dat geval lopen we dus steeds één stap achter.";
+"meldungen_additional_info_text1" = "Om een virusuitbraak te voorkomen, moet de besmettingsketen worden doorbroken. Dit kan worden gedaan door het isoleren van besmette personen. Dit is lastig in het geval van COVID-19, omdat besmette personen andere mensen kunnen infecteren nog voordat zij zelf symptomen vertonen. Dit betekent dat je het virus zou kunnen verspreiden zonder het te weten. Als alleen de mensen die symptomen hebben zichzelf isoleren, kan het virus zich dus nog steeds verspreiden. In dat geval lopen we dus steeds één stap achter.";
 
 /*Meldungen: zusätzlicher Info Text*/
 "meldungen_additional_info_text2" = "Daarom moeten de mensen die in contact zijn geweest met besmette personen geïnformeerd worden. Dit stelt hen in staat om zichzelf te isoleren - nog voordat zij symptomen vertonen. Niet elk contact zal het virus hebben, maar zij die het virus wel hebben geven het op deze manier niet door. Zo lopen we altijd één stap voor.";
@@ -358,3 +355,38 @@
 /*Text der Nachricht, die auf Beta-Status Hinweist*/
 "preview_warning_text" = "Deze app is gebouwd als een preview om de DP-3T implementatie te demonstreren. Het is geen eindproduct.";
 
+"splash_slogan" = "met elkaar, voor elkaar";
+"splash_message" = "samen verslaan we COVID-19";
+
+"language_selection_title" = "Kies uw taal";
+"language_selection_continue_button_title" = "Beginnen";
+"language_selection_save_button_title" = "Bewaar";
+
+"onboarding_step_one_title" = "Privacy-first\ncontact tracing";
+"onboarding_step_one_message" = "Help bij het bestrijden van COVID-19 met compleet anonieme tracering.\nDeze app herkent ontmoetingen met andere gebruikers en slaat deze anoniem en lokaal (op je telefoon) op met beveiliging.";
+"onboarding_step_two_title" = "Informeer en word geinformeerd";
+"onboarding_step_two_message" = "Je zal een melding ontvangen als iemand met COVID-19 bij jou in de buurt is geweest. Als jij positief test kan jij iedereen met wie jij een ontmoeting gehad hebt daar anoniem van op de hoogte stellen, zodat zij de nodige veiligheidsmaatregelen kunnen nemen.";
+"onboarding_step_permission_title" = "Laten we uw\ntelefoon opzetten.";
+"onboarding_step_permission_message" = "Deze app heeft de volgende toestemmingen nodig om naar behoren te kunnen werken.";
+"onboarding_done_button_title" = "OK gedaan";
+"onboarding_next_button_title" = "volgende";
+"onboarding_continue_without_popup_text" = "Weet je zeker dat je verder wilt? De app kan alleen goed functioneren met de benodigde toestemmingen.";
+"onboarding_continue_without_popup_abort" = "Annuleer";
+"onboarding_continue_without_popup_continue" = "Ga door";
+
+"permission_thanks_label" = "Dank u wel!";
+"permission_bluetooth_name" = "Bluetooth";
+
+"permission_step_one" = "stap 1: activeer";
+"permission_notifications_name" = "Pushmeldingen";
+"permission_step_two" = "stap 2: activeer";
+
+"dashboard_hide_status_button" = "status verbergen";
+"dashboard_show_status_button" = "toon status";
+
+"header-no-known-contact-title" = "Geen contact bekend";
+"header-no-known-contact-subtitle" = "U bent niet in de buurt geweest van iemand die positief is getest op COVID-19";
+"header-covid-positive" = "COVID-19 positief";
+"header-covid-positive-subtitle" = "U bent positief getest op het COVID-19 virus. U moet in isolatie";
+"header-possible-exposure" = "mogelijke blootstelling";
+"header-covid-possible-subtitle" = "U bent in de buurt geweest van iemand die positief is getest op COVID-19";

@@ -1,0 +1,3 @@
+"CFBundleDisplayName" = "WelzijNL";
+"NSBluetoothPeripheralUsageDescription" = "Encounters are recognized in the background using Bluetooth to save energy.";
+"NSBluetoothAlwaysUsageDescription" = "Encounters are recognized in the background using Bluetooth to save energy.";

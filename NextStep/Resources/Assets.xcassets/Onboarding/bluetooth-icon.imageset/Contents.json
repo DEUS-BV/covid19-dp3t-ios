@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "bluetooth-icon.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

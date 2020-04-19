@@ -24,13 +24,11 @@
 		2443947B2445F062003ED582 /* NSHeaderArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2443947A2445F062003ED582 /* NSHeaderArcView.swift */; };
 		24780B07242DFCD9003BB26C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B06242DFCD9003BB26C /* User.swift */; };
 		24780B09242DFCE4003BB26C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B08242DFCE4003BB26C /* Model.swift */; };
-		24780B0B242DFCFB003BB26C /* NSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B0A242DFCFB003BB26C /* NSTabBarController.swift */; };
 		24780B11242DFD2F003BB26C /* NSMeldungModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B10242DFD2F003BB26C /* NSMeldungModuleView.swift */; };
 		24780B13242DFD3D003BB26C /* NSInformModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B12242DFD3D003BB26C /* NSInformModuleView.swift */; };
 		24780B17242DFD7C003BB26C /* NSInformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B16242DFD7C003BB26C /* NSInformViewController.swift */; };
 		24780B1A242DFDAE003BB26C /* NSModuleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B19242DFDAE003BB26C /* NSModuleBaseView.swift */; };
 		24780B1C242DFE18003BB26C /* NSInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B1B242DFE18003BB26C /* NSInfoViewController.swift */; };
-		24780B20242DFE33003BB26C /* NSOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */; };
 		24780B24242DFE6D003BB26C /* NSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B23242DFE6D003BB26C /* NSNavigationController.swift */; };
 		24780B28242F3A4C003BB26C /* NSSymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B27242F3A4C003BB26C /* NSSymptomsViewController.swift */; };
 		24780B2C242F3CC2003BB26C /* NSInformStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B2B242F3CC2003BB26C /* NSInformStepViewController.swift */; };
@@ -83,7 +81,6 @@
 		3788B76A244B1A0400D625A8 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3788B768244B1A0400D625A8 /* Lato-Medium.ttf */; };
 		3788B76B244B1A0400D625A8 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3788B769244B1A0400D625A8 /* Lato-Bold.ttf */; };
 		3788B76D244B1A2E00D625A8 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3788B76C244B1A2E00D625A8 /* Lato-BlackItalic.ttf */; };
-		3788B773244B273D00D625A8 /* HomescreenCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3788B772244B273D00D625A8 /* HomescreenCellView.swift */; };
 		6E1771542440B09A0008D73D /* NSCodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */; };
 		6E1771562440B5140008D73D /* NSCodeInputControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771552440B5140008D73D /* NSCodeInputControl.swift */; };
 		6E6E516F242F4FE0006E532E /* NSConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E516E242F4FE0006E532E /* NSConfigManager.swift */; };
@@ -120,14 +117,10 @@
 		8E81CCCF241FD813006F2437 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8E81CCCE241FD813006F2437 /* SnapKit */; };
 		AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */; };
 		AAF73663242F2DC90051E34A /* NSModuleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */; };
-		AAF73666242F2EA00051E34A /* NSBegegnungenModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73665242F2EA00051E34A /* NSBegegnungenModuleView.swift */; };
+		AAF73666242F2EA00051E34A /* EncountersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73665242F2EA00051E34A /* EncountersView.swift */; };
 		AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73667242F3D030051E34A /* UIStackView+NS.swift */; };
 		AAF7366B2430838A0051E34A /* NSAnimatedGraphLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */; };
-		DC175E402430C4C700BD2AD6 /* NSOnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */; };
-		DC175E422430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */; };
 		DC286A26242CE0B9001D5344 /* NSBackendEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC286A25242CE0B9001D5344 /* NSBackendEnvironment.swift */; };
-		DC56B8B9242EA7760077B99C /* NSOnboardingStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8B8242EA7760077B99C /* NSOnboardingStepModel.swift */; };
-		DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */; };
 		DC702AFB243F6D870066C773 /* UBLabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702AFA243F6D870066C773 /* UBLabelType.swift */; };
 		DC702AFD243F6E410066C773 /* UBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702AFC243F6E410066C773 /* UBButton.swift */; };
 		DC702AFF243F6ED90066C773 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702AFE243F6ED90066C773 /* UIColor+HEX.swift */; };
@@ -146,11 +139,19 @@
 		DC9A81AB242CE5E000AD1548 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC9A81A1242CE5E000AD1548 /* Localizable.strings */; };
 		DC9A81AC242CE5E000AD1548 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC9A81A3242CE5E000AD1548 /* InfoPlist.strings */; };
 		DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */; };
+		FE3066AB244B46CA00EA0181 /* OnboardingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3066AA244B46CA00EA0181 /* OnboardingSteps.swift */; };
 		FE8E61E7244B23D4002D3210 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E61E6244B23D4002D3210 /* SplashScreenViewController.swift */; };
 		FE8E61EA244B29C2002D3210 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE8E61E8244B29BF002D3210 /* Lato-LightItalic.ttf */; };
 		FE8E61EB244B29C2002D3210 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE8E61E9244B29BF002D3210 /* Lato-Regular.ttf */; };
 		FE8E61ED244B312C002D3210 /* LanguageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E61EC244B312C002D3210 /* LanguageSelectionViewController.swift */; };
 		FE8E61F0244B32B8002D3210 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E61EF244B32B8002D3210 /* Languages.swift */; };
+		FEB69151244B9ABA00A10F8E /* SelectableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB69150244B9AB900A10F8E /* SelectableButton.swift */; };
+		FEE5CAAD244B4ED600A59DF5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE5CAAC244B4ED600A59DF5 /* OnboardingViewController.swift */; };
+		FEE5CAAF244B5B1700A59DF5 /* OnboardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE5CAAE244B5B1700A59DF5 /* OnboardingStepViewController.swift */; };
+		FEE5CAB1244B5F2A00A59DF5 /* OnboardingStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE5CAB0244B5F2A00A59DF5 /* OnboardingStepModel.swift */; };
+		FEE5CAB3244B67D500A59DF5 /* OnboardingPermissionStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE5CAB2244B67D500A59DF5 /* OnboardingPermissionStepViewController.swift */; };
+		FEE5CAB5244B6B2500A59DF5 /* PermissionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE5CAB4244B6B2500A59DF5 /* PermissionButton.swift */; };
+		FEE5CAB7244B750400A59DF5 /* RequiredPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE5CAB6244B750400A59DF5 /* RequiredPermissions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,13 +170,11 @@
 		2443947D2445F8A1003ED582 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		24780B06242DFCD9003BB26C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		24780B08242DFCE4003BB26C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		24780B0A242DFCFB003BB26C /* NSTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTabBarController.swift; sourceTree = "<group>"; };
 		24780B10242DFD2F003BB26C /* NSMeldungModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungModuleView.swift; sourceTree = "<group>"; };
 		24780B12242DFD3D003BB26C /* NSInformModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformModuleView.swift; sourceTree = "<group>"; };
 		24780B16242DFD7C003BB26C /* NSInformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformViewController.swift; sourceTree = "<group>"; };
 		24780B19242DFDAE003BB26C /* NSModuleBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSModuleBaseView.swift; sourceTree = "<group>"; };
 		24780B1B242DFE18003BB26C /* NSInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInfoViewController.swift; sourceTree = "<group>"; };
-		24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingViewController.swift; sourceTree = "<group>"; };
 		24780B23242DFE6D003BB26C /* NSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNavigationController.swift; sourceTree = "<group>"; };
 		24780B27242F3A4C003BB26C /* NSSymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSymptomsViewController.swift; sourceTree = "<group>"; };
 		24780B2B242F3CC2003BB26C /* NSInformStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformStepViewController.swift; sourceTree = "<group>"; };
@@ -229,7 +228,6 @@
 		3788B768244B1A0400D625A8 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
 		3788B769244B1A0400D625A8 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		3788B76C244B1A2E00D625A8 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
-		3788B772244B273D00D625A8 /* HomescreenCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenCellView.swift; sourceTree = "<group>"; };
 		6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodeInputViewController.swift; sourceTree = "<group>"; };
 		6E1771552440B5140008D73D /* NSCodeInputControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodeInputControl.swift; sourceTree = "<group>"; };
 		6E6E516E242F4FE0006E532E /* NSConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSConfigManager.swift; sourceTree = "<group>"; };
@@ -269,15 +267,11 @@
 		8E81CCB1241FCC7F006F2437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphView.swift; sourceTree = "<group>"; };
 		AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSModuleHeaderView.swift; sourceTree = "<group>"; };
-		AAF73665242F2EA00051E34A /* NSBegegnungenModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBegegnungenModuleView.swift; sourceTree = "<group>"; };
+		AAF73665242F2EA00051E34A /* EncountersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountersView.swift; sourceTree = "<group>"; };
 		AAF73667242F3D030051E34A /* UIStackView+NS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+NS.swift"; sourceTree = "<group>"; };
 		AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphLayer.swift; sourceTree = "<group>"; };
-		DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingContentViewController.swift; sourceTree = "<group>"; };
-		DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingPermissionsViewController.swift; sourceTree = "<group>"; };
 		DC175E432430D4B400BD2AD6 /* NextStep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NextStep.entitlements; sourceTree = "<group>"; };
 		DC286A25242CE0B9001D5344 /* NSBackendEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBackendEnvironment.swift; sourceTree = "<group>"; };
-		DC56B8B8242EA7760077B99C /* NSOnboardingStepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingStepModel.swift; sourceTree = "<group>"; };
-		DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingStepViewController.swift; sourceTree = "<group>"; };
 		DC702AFA243F6D870066C773 /* UBLabelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBLabelType.swift; sourceTree = "<group>"; };
 		DC702AFC243F6E410066C773 /* UBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBButton.swift; sourceTree = "<group>"; };
 		DC702AFE243F6ED90066C773 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
@@ -301,11 +295,19 @@
 		DC9A81A5242CE5E000AD1548 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC9A81A6242CE5E000AD1548 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHomescreenViewController.swift; sourceTree = "<group>"; };
+		FE3066AA244B46CA00EA0181 /* OnboardingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSteps.swift; sourceTree = "<group>"; };
 		FE8E61E6244B23D4002D3210 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		FE8E61E8244B29BF002D3210 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
 		FE8E61E9244B29BF002D3210 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		FE8E61EC244B312C002D3210 /* LanguageSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionViewController.swift; sourceTree = "<group>"; };
 		FE8E61EF244B32B8002D3210 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		FEB69150244B9AB900A10F8E /* SelectableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButton.swift; sourceTree = "<group>"; };
+		FEE5CAAC244B4ED600A59DF5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		FEE5CAAE244B5B1700A59DF5 /* OnboardingStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepViewController.swift; sourceTree = "<group>"; };
+		FEE5CAB0244B5F2A00A59DF5 /* OnboardingStepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepModel.swift; sourceTree = "<group>"; };
+		FEE5CAB2244B67D500A59DF5 /* OnboardingPermissionStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPermissionStepViewController.swift; sourceTree = "<group>"; };
+		FEE5CAB4244B6B2500A59DF5 /* PermissionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionButton.swift; sourceTree = "<group>"; };
+		FEE5CAB6244B750400A59DF5 /* RequiredPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredPermissions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,27 +426,14 @@
 		24780AF5242DF7F6003BB26C /* Homescreen */ = {
 			isa = PBXGroup;
 			children = (
-				3788B771244B272B00D625A8 /* SharedUI */,
 				DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */,
 				24F35ACF2445BDB500A1B7AB /* Header */,
 				24780B18242DFD98003BB26C /* Base */,
 				24780AFE242DF8AA003BB26C /* Meldung */,
-				AAF73664242F2E300051E34A /* Begegnungen */,
+				AAF73664242F2E300051E34A /* Encounters */,
 				24780AFA242DF854003BB26C /* Inform */,
 			);
 			path = Homescreen;
-			sourceTree = "<group>";
-		};
-		24780AF6242DF801003BB26C /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */,
-				DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */,
-				DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */,
-				DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */,
-				DC56B8B8242EA7760077B99C /* NSOnboardingStepModel.swift */,
-			);
-			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		24780AF7242DF807003BB26C /* InfoTabs */ = {
@@ -475,7 +464,6 @@
 			isa = PBXGroup;
 			children = (
 				24780B582431B5A9003BB26C /* NSContentEnvironment.swift */,
-				24780B0A242DFCFB003BB26C /* NSTabBarController.swift */,
 				24780B23242DFE6D003BB26C /* NSNavigationController.swift */,
 			);
 			path = Navigation;
@@ -548,10 +536,12 @@
 			isa = PBXGroup;
 			children = (
 				6E7C0D21242CE2100017C4F9 /* NSButton.swift */,
+				FEB69150244B9AB900A10F8E /* SelectableButton.swift */,
 				6E7C0D44242E4AA90017C4F9 /* NSLoadingView.swift */,
 				AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */,
 				AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */,
 				6EA49E2824443E69009EFCAB /* NSSimpleTextButton.swift */,
+				FEE5CAB4244B6B2500A59DF5 /* PermissionButton.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -680,14 +670,6 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
-		3788B771244B272B00D625A8 /* SharedUI */ = {
-			isa = PBXGroup;
-			children = (
-				3788B772244B273D00D625A8 /* HomescreenCellView.swift */,
-			);
-			path = SharedUI;
-			sourceTree = "<group>";
-		};
 		6E7C0D23242D01860017C4F9 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,12 +755,12 @@
 			path = NextStepTests;
 			sourceTree = "<group>";
 		};
-		AAF73664242F2E300051E34A /* Begegnungen */ = {
+		AAF73664242F2E300051E34A /* Encounters */ = {
 			isa = PBXGroup;
 			children = (
-				AAF73665242F2EA00051E34A /* NSBegegnungenModuleView.swift */,
+				AAF73665242F2EA00051E34A /* EncountersView.swift */,
 			);
-			path = Begegnungen;
+			path = Encounters;
 			sourceTree = "<group>";
 		};
 		DC286A24242CE0AD001D5344 /* Logic */ = {
@@ -802,7 +784,6 @@
 				24780AF9242DF828003BB26C /* Navigation */,
 				2443948024463B01003ED582 /* Homescreen */,
 				24780AF7242DF807003BB26C /* InfoTabs */,
-				24780AF6242DF801003BB26C /* Onboarding */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -873,11 +854,33 @@
 			path = Translations;
 			sourceTree = SOURCE_ROOT;
 		};
+		FE3066A7244B46A200EA0181 /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				FE3066AC244B481100EA0181 /* Common */,
+				FEE5CAAC244B4ED600A59DF5 /* OnboardingViewController.swift */,
+				FEE5CAAE244B5B1700A59DF5 /* OnboardingStepViewController.swift */,
+				FEE5CAB2244B67D500A59DF5 /* OnboardingPermissionStepViewController.swift */,
+				FEE5CAB0244B5F2A00A59DF5 /* OnboardingStepModel.swift */,
+			);
+			path = Walkthrough;
+			sourceTree = "<group>";
+		};
+		FE3066AC244B481100EA0181 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FE3066AA244B46CA00EA0181 /* OnboardingSteps.swift */,
+				FEE5CAB6244B750400A59DF5 /* RequiredPermissions.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		FE8E61E5244B21FF002D3210 /* NewOnboarding */ = {
 			isa = PBXGroup;
 			children = (
 				FE8E61E6244B23D4002D3210 /* SplashScreenViewController.swift */,
 				FE8E61EC244B312C002D3210 /* LanguageSelectionViewController.swift */,
+				FE3066A7244B46A200EA0181 /* Walkthrough */,
 			);
 			path = NewOnboarding;
 			sourceTree = "<group>";
@@ -1096,7 +1099,6 @@
 				3753389C24498E2800BBAA68 /* CryptoConstants.swift in Sources */,
 				375338A724498E2800BBAA68 /* ExposeeServiceClient.swift in Sources */,
 				3753389924498E2800BBAA68 /* DP3TSDK.swift in Sources */,
-				DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */,
 				375338A424498E2800BBAA68 /* KnownCaseModel.swift in Sources */,
 				6E7C0D22242CE2100017C4F9 /* NSButton.swift in Sources */,
 				3753389F24498E2800BBAA68 /* SecretKey.swift in Sources */,
@@ -1124,13 +1126,12 @@
 				AAF73663242F2DC90051E34A /* NSModuleHeaderView.swift in Sources */,
 				24780B1A242DFDAE003BB26C /* NSModuleBaseView.swift in Sources */,
 				24780B5D2431B5A9003BB26C /* NSContentEnvironment.swift in Sources */,
-				DC175E422430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift in Sources */,
 				6EFB097524459B870097BD3D /* NSBegegnungenDetailViewController.swift in Sources */,
 				375338AA24498E2800BBAA68 /* KnownCasesSynchronizer.swift in Sources */,
 				375338BB24498E2800BBAA68 /* DP3TMatching.swift in Sources */,
 				375338B024498E2800BBAA68 /* LoggingStorage.swift in Sources */,
 				FE8E61E7244B23D4002D3210 /* SplashScreenViewController.swift in Sources */,
-				DC56B8B9242EA7760077B99C /* NSOnboardingStepModel.swift in Sources */,
+				FEE5CAB5244B6B2500A59DF5 /* PermissionButton.swift in Sources */,
 				DC286A26242CE0B9001D5344 /* NSBackendEnvironment.swift in Sources */,
 				DC702B01243F6F640066C773 /* String+NS.swift in Sources */,
 				3753389D24498E2800BBAA68 /* Crypto.swift in Sources */,
@@ -1143,6 +1144,7 @@
 				6E6E5185242F9586006E532E /* NSCheckboxControl.swift in Sources */,
 				6E7C0D45242E4AA90017C4F9 /* NSLoadingView.swift in Sources */,
 				375338A324498E2800BBAA68 /* HandshakeModel.swift in Sources */,
+				FE3066AB244B46CA00EA0181 /* OnboardingSteps.swift in Sources */,
 				6E6E5188242F9586006E532E /* NSSendViewController.swift in Sources */,
 				DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */,
 				6E6E5186242F9586006E532E /* NSCheckBoxView.swift in Sources */,
@@ -1154,35 +1156,37 @@
 				375338AC24498E2800BBAA68 /* BluetoothDiscoveryService.swift in Sources */,
 				375338B324498E2800BBAA68 /* Keychain.swift in Sources */,
 				6E6E5171242F5026006E532E /* NSConfig.swift in Sources */,
+				FEE5CAAD244B4ED600A59DF5 /* OnboardingViewController.swift in Sources */,
+				FEB69151244B9ABA00A10F8E /* SelectableButton.swift in Sources */,
 				6E7C0D39242E02A20017C4F9 /* NSLayoutConstants.swift in Sources */,
+				FEE5CAAF244B5B1700A59DF5 /* OnboardingStepViewController.swift in Sources */,
 				3753389824498E2800BBAA68 /* DP3TTracing.swift in Sources */,
 				6E1771562440B5140008D73D /* NSCodeInputControl.swift in Sources */,
 				3753389E24498E2800BBAA68 /* DP3TCryptoModule.swift in Sources */,
 				6EA49E2B2444410D009EFCAB /* NSNoCodeInformationViewController.swift in Sources */,
 				DC702B15243F6FD90066C773 /* UBKeychainAccessibility.swift in Sources */,
 				375338A824498E2800BBAA68 /* ApplicationsSynchronizer.swift in Sources */,
-				24780B0B242DFCFB003BB26C /* NSTabBarController.swift in Sources */,
 				6EFB09792445B2CA0097BD3D /* NSBluetoothSettingsDetailView.swift in Sources */,
 				6EFB097E244603560097BD3D /* NSMeldungenDetailViewController.swift in Sources */,
 				6E6E518E242FB9A8006E532E /* NSAppTitleView.swift in Sources */,
 				AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */,
 				6EFB09772445B1940097BD3D /* NSBluetoothSettingsControl.swift in Sources */,
 				DC702AFB243F6D870066C773 /* UBLabelType.swift in Sources */,
-				3788B773244B273D00D625A8 /* HomescreenCellView.swift in Sources */,
 				375338B524498E2800BBAA68 /* SQLite+URL.swift in Sources */,
 				6E6E5192243121D2006E532E /* NSErrorView.swift in Sources */,
 				3753389A24498E2800BBAA68 /* LoggingDelegate.swift in Sources */,
-				AAF73666242F2EA00051E34A /* NSBegegnungenModuleView.swift in Sources */,
+				AAF73666242F2EA00051E34A /* EncountersView.swift in Sources */,
 				375338AB24498E2800BBAA68 /* BluetoothConstants.swift in Sources */,
 				375338BA24498E2800BBAA68 /* DP3TTracingState.swift in Sources */,
+				FEE5CAB3244B67D500A59DF5 /* OnboardingPermissionStepViewController.swift in Sources */,
 				DC702B0D243F6FAE0066C773 /* UBCodable.swift in Sources */,
 				8E81CC99241FCC7D006F2437 /* AppDelegate.swift in Sources */,
+				FEE5CAB7244B750400A59DF5 /* RequiredPermissions.swift in Sources */,
 				6E6E5190242FCE13006E532E /* NSFancyNumberView.swift in Sources */,
 				3788B767244A6C5600D625A8 /* UBPushManager.swift in Sources */,
 				6E7C0D20242CE1190017C4F9 /* UIColor+NS.swift in Sources */,
 				2443947B2445F062003ED582 /* NSHeaderArcView.swift in Sources */,
 				24D5EF6A2448CAE800C197D6 /* NSUIStateModel.swift in Sources */,
-				DC175E402430C4C700BD2AD6 /* NSOnboardingContentViewController.swift in Sources */,
 				24780B30242F3EAF003BB26C /* NSInformBottomButtonViewController.swift in Sources */,
 				6E6E5189242F9586006E532E /* NSInformNoSymptomsViewController.swift in Sources */,
 				375338A624498E2800BBAA68 /* Endpoints.swift in Sources */,
@@ -1190,11 +1194,11 @@
 				375338B724498E2800BBAA68 /* KnownCasesStorage.swift in Sources */,
 				6E6E516F242F4FE0006E532E /* NSConfigManager.swift in Sources */,
 				6E6E5184242F9586006E532E /* NSInformThankYouViewController.swift in Sources */,
-				24780B20242DFE33003BB26C /* NSOnboardingViewController.swift in Sources */,
 				375338A224498E2800BBAA68 /* ExposeeModel.swift in Sources */,
 				6E6E518B242FA39C006E532E /* NSVerhaltenViewController.swift in Sources */,
 				24780B5B2431B5A9003BB26C /* NSDateFormatter.swift in Sources */,
 				24780B07242DFCD9003BB26C /* User.swift in Sources */,
+				FEE5CAB1244B5F2A00A59DF5 /* OnboardingStepModel.swift in Sources */,
 				375338A524498E2800BBAA68 /* ExposeeAuthData.swift in Sources */,
 				375338AD24498E2800BBAA68 /* BluetoothDelegate.swift in Sources */,
 				24780B28242F3A4C003BB26C /* NSSymptomsViewController.swift in Sources */,

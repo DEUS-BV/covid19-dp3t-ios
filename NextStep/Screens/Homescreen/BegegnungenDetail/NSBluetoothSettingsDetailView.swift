@@ -9,7 +9,7 @@ import UIKit
 class NSBluetoothSettingsDetailView: UIView {
     // MARK: - Views
 
-    private let titleLabel = NSLabel(.uppercaseBold)
+    private let mainLabel = UILabel()
     private let subtextLabel = NSLabel(.text)
     private let imageView = UIImageView()
 
@@ -17,12 +17,14 @@ class NSBluetoothSettingsDetailView: UIView {
 
     // MARK: - Init
 
-    init(title: String, subText: String, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, backgroundInset: Bool = true, hasBubble: Bool = false, additionalText: String? = nil) {
+    init(title: String, subText: String, image: UIImage?, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = .clear, backgroundInset: Bool = true, hasBubble: Bool = false, additionalText: String? = nil) {
         super.init(frame: .zero)
 
-        titleLabel.text = title
+        mainLabel.attributedText = createAttributedTitle(from: title, and: subText)
+        mainLabel.textColor = titleColor
+        mainLabel.numberOfLines = 0
         subtextLabel.text = subText
-        titleLabel.textColor = titleColor
+        imageView.image = image
         subtextLabel.textColor = subtextColor
         additionalLabel.textColor = subtextColor
 
@@ -67,30 +69,22 @@ class NSBluetoothSettingsDetailView: UIView {
             topBottomPadding = backgroundInset ? 14.0 : (2.0 * NSPadding.medium)
         }
 
-        let hasAdditionalStuff = additionalText != nil
-
-        addSubview(titleLabel)
-        addSubview(subtextLabel)
+        addSubview(mainLabel)
         addSubview(imageView)
 
         imageView.ub_setContentPriorityRequired()
 
         imageView.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(NSPadding.medium * 2.0)
-            make.top.equalToSuperview().inset(topBottomPadding)
+            make.top.equalTo(mainLabel.snp.top)
             make.width.height.equalTo(24.0)
         }
 
-        titleLabel.snp.makeConstraints { make in
+        mainLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(topBottomPadding + 3.0)
             make.left.equalTo(self.imageView.snp.right).offset(NSPadding.medium)
             make.right.equalToSuperview().inset(NSPadding.medium * 2.0)
-        }
-
-        subtextLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.medium - 2.0)
-            make.left.right.equalTo(self.titleLabel)
-            if !hasAdditionalStuff {
+            if additionalText == nil {
                 make.bottom.equalToSuperview().inset(topBottomPadding)
             }
         }
@@ -100,10 +94,27 @@ class NSBluetoothSettingsDetailView: UIView {
             additionalLabel.text = adt
 
             additionalLabel.snp.makeConstraints { make in
-                make.top.equalTo(self.subtextLabel.snp.bottom).offset(NSPadding.medium)
-                make.left.right.equalTo(self.titleLabel)
+                make.top.equalTo(self.mainLabel.snp.bottom).offset(NSPadding.medium)
+                make.left.right.equalTo(self.mainLabel)
                 make.bottom.equalToSuperview().inset(topBottomPadding)
             }
         }
+    }
+
+    private func createAttributedTitle(from title: String, and subtitle: String) -> NSAttributedString {
+        let boldFont = NSLabelType.textSemiBold.font
+        let normalFont = NSLabelType.text.font
+        let textColor = UIColor.homescreen_text
+        let resultString = NSMutableAttributedString(string: title,
+                                                     attributes: [.font: boldFont,
+                                                                  .foregroundColor: textColor])
+        resultString.append(NSAttributedString(string: " - ",
+                                               attributes: [.font: normalFont,
+                                                            .foregroundColor: textColor]))
+        resultString.append(NSAttributedString(string: subtitle,
+                                               attributes: [.font: normalFont,
+                                                            .foregroundColor: textColor]))
+
+        return resultString
     }
 }

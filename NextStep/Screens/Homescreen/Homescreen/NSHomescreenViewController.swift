@@ -12,9 +12,12 @@ class NSHomescreenViewController: NSViewController {
     private let stackScrollView = NSStackScrollView()
 
     let titleView = NSAppTitleView()
+    let languageSelectionButton = UIButton()
+    let hideStatusButton = UIButton()
 
-    private let handshakesModuleView = NSBegegnungenModuleView()
+    private let handshakesModuleView = EncountersView()
     private let meldungView = NSMeldungView()
+    private let spacerView = UIView()
 
     private let informButton = NSButton(title: "inform_button_title".ub_localized, style: .primaryOutline)
     private let syncButton = NSButton(title: "Sync now", style: .primaryOutline)
@@ -37,6 +40,7 @@ class NSHomescreenViewController: NSViewController {
         super.viewDidLoad()
         view.backgroundColor = .ns_background_secondary
 
+        setupButtons()
         setupLayout()
 
         meldungView.touchUpCallback = { [weak self] in
@@ -82,11 +86,31 @@ class NSHomescreenViewController: NSViewController {
 
     // MARK: - Setup
 
+    private func setupButtons() {
+        languageSelectionButton.setTitle(Languages.current.languageCode.uppercased(), for: .normal)
+        languageSelectionButton.titleLabel?.font = NSLabelType.subtitle.font
+        languageSelectionButton.addTarget(self,
+                                          action: #selector(presentLanguageSelection),
+                                          for: .touchUpInside)
+        languageSelectionButton.setTitleColor(UIColor.white.withAlphaComponent(0.5),
+                                              for: .normal)
+
+        hideStatusButton.setTitle("dashboard_hide_status_button".ub_localized, for: .normal)
+        hideStatusButton.setTitle("dashboard_show_status_button".ub_localized, for: .selected)
+        hideStatusButton.titleLabel?.textAlignment = .right
+        hideStatusButton.titleLabel?.font = NSLabelType.subtitle.font
+        hideStatusButton.addTarget(self,
+                                   action: #selector(toggleHiddenStatus),
+                                   for: .touchUpInside)
+        hideStatusButton.setTitleColor(UIColor.white.withAlphaComponent(0.5),
+                                       for: .normal)
+    }
+
     private func setupLayout() {
         view.addSubview(titleView)
         titleView.snp.makeConstraints { make in
             make.left.right.top.equalToSuperview()
-            make.height.equalTo(280)
+            make.height.equalTo(340)
         }
 
         stackScrollView.stackView.isLayoutMarginsRelativeArrangement = true
@@ -99,7 +123,10 @@ class NSHomescreenViewController: NSViewController {
 
         stackScrollView.scrollView.delegate = titleView
 
-        stackScrollView.addSpacerView(180)
+        spacerView.snp.makeConstraints { make in
+            make.height.equalTo(290)
+        }
+        stackScrollView.addArrangedView(spacerView)
 
         stackScrollView.addArrangedView(handshakesModuleView)
         stackScrollView.addSpacerView(NSPadding.large)
@@ -115,15 +142,31 @@ class NSHomescreenViewController: NSViewController {
         stackScrollView.addArrangedView(buttonContainer)
         stackScrollView.addSpacerView(NSPadding.large)
 
-        #if DEBUG
-        let syncButtonContainer = UIView()
-        syncButtonContainer.addSubview(syncButton)
-        syncButton.snp.makeConstraints { make in
-            make.top.bottom.centerX.equalToSuperview()
-        }
-        stackScrollView.addArrangedView(syncButtonContainer)
-        stackScrollView.addSpacerView(NSPadding.large)
+        #if SHOW_SYNC
+            let syncButtonContainer = UIView()
+            syncButtonContainer.addSubview(syncButton)
+            syncButton.snp.makeConstraints { make in
+                make.top.bottom.centerX.equalToSuperview()
+            }
+            stackScrollView.addArrangedView(syncButtonContainer)
+            stackScrollView.addSpacerView(NSPadding.large)
         #endif
+
+        view.addSubview(languageSelectionButton)
+        view.addSubview(hideStatusButton)
+
+        languageSelectionButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(30.0)
+            make.height.width.greaterThanOrEqualTo(30.0)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(4.0)
+            make.trailing.lessThanOrEqualTo(hideStatusButton.snp.leading).inset(8.0)
+        }
+
+        hideStatusButton.titleLabel?.numberOfLines = 0
+        hideStatusButton.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(30.0)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(4.0)
+        }
 
         handshakesModuleView.alpha = 0
         meldungView.alpha = 0
@@ -164,6 +207,35 @@ class NSHomescreenViewController: NSViewController {
         }
     }
 
+    // MARK: - Actions
+
+    @objc private func presentLanguageSelection() {
+        present(LanguageSelectionViewController(mode: .settings), animated: true, completion: nil)
+    }
+
+    @objc private func toggleHiddenStatus() {
+        hideStatusButton.isSelected = !hideStatusButton.isSelected
+        if hideStatusButton.isSelected {
+            titleView.uiState = .dontShow
+            spacerView.snp.remakeConstraints { make in
+                make.height.equalTo(80)
+            }
+            titleView.snp.remakeConstraints { make in
+                make.left.right.top.equalToSuperview()
+                make.height.equalTo(140)
+            }
+        } else {
+            titleView.uiState = NSUIStateManager.shared.uiState.homescreen.header
+            spacerView.snp.remakeConstraints { make in
+                make.height.equalTo(290)
+            }
+            titleView.snp.remakeConstraints { make in
+                make.left.right.top.equalToSuperview()
+                make.height.equalTo(340)
+            }
+        }
+    }
+
     // MARK: - Details
 
     private func presentBegegnungenDetail() {
@@ -176,7 +248,7 @@ class NSHomescreenViewController: NSViewController {
 
     private func presentOnboardingIfNeeded() {
         if !User.shared.hasCompletedOnboarding {
-            let onboardingViewController = NSOnboardingViewController()
+            let onboardingViewController = OnboardingViewController()
             onboardingViewController.modalPresentationStyle = .fullScreen
             present(onboardingViewController, animated: false)
         }

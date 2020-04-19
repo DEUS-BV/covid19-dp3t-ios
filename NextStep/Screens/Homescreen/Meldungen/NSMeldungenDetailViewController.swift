@@ -82,7 +82,7 @@ class NSMeldungenDetailViewController: NSViewController {
         stackScrollView.addSpacerView(NSPadding.large)
 
         let container = UIView()
-        let view = NSBluetoothSettingsDetailView(title: title, subText: subText, titleColor: titleColor, subtextColor: textColor, backgroundColor: backgroundColor, backgroundInset: false, hasBubble: true)
+        let view = NSBluetoothSettingsDetailView(title: title, subText: subText, image: nil, titleColor: titleColor, subtextColor: textColor, backgroundColor: backgroundColor, backgroundInset: false, hasBubble: true)
 
         container.addSubview(view)
 

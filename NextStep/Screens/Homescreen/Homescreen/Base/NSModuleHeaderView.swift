@@ -8,7 +8,6 @@ import SnapKit
 import UIKit
 
 class NSModuleHeaderView: UIView {
-    
     private let leftIconImageView = UIImageView()
     private let titleLabel = NSLabel(.headline, textColor: .ns_secondary)
     private var rightCaretImageView = UIImageView(image: UIImage(named: "ic-forward"))
@@ -55,7 +54,7 @@ class NSModuleHeaderView: UIView {
         rightCaretImageView.ub_setContentPriorityRequired()
         rightCaretImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().inset(NSPadding.medium)
+            make.trailing.equalToSuperview().inset(18.0)
         }
     }
 

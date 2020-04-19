@@ -27,7 +27,7 @@ class NSModuleBaseView: UIControl {
         }
     }
 
-    var bottomPadding: CGFloat = NSPadding.large {
+    var bottomPadding: CGFloat = NSPadding.small {
         didSet { updateLayout() }
     }
 
